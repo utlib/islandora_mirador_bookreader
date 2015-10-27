@@ -1,0 +1,24 @@
+.mirador-reader {
+  width: 725px;
+  min-height: 1000px;
+  position: relative; }
+  .mirador-reader .content-container {
+    margin-top: 40px; }
+  .mirador-reader .window-manifest-title {
+    font-size: 1.5em;
+    padding: 0;
+    margin: 0;
+    margin-left: 35px; }
+  .mirador-reader .select-metadata h3 {
+    font-size: 1em; }
+  .mirador-reader .select-metadata h4 {
+    font-size: 0.9em; }
+
+.mirador-main-menu-bar {
+  height: 38px; }
+  .mirador-main-menu-bar ul.mirador-main-menu {
+    padding: 0; }
+    .mirador-main-menu-bar ul.mirador-main-menu li {
+      margin-left: 10px; }
+
+/*# sourceMappingURL=mirador_custom.css.map */

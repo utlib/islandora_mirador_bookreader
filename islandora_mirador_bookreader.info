@@ -1,0 +1,8 @@
+name = "Islandora Mirador Bookreader"
+description = "Implements Mirador BookReader for use with Islandora."
+package = Islandora Viewers
+dependencies[] = libraries
+dependencies[] = islandora_paged_content
+dependencies[] = colorbox
+version = 7.x-1.4
+core = 7.x

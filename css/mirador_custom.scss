@@ -1,0 +1,38 @@
+.mirador-reader {
+	width: 725px;
+	min-height: 1000px;
+	position: relative;
+
+	.content-container {
+		margin-top:40px;
+	}
+
+	.window-manifest-title {
+		font-size: 1.5em;
+		padding: 0;
+		margin: 0;
+		margin-left: 35px;
+	}
+	
+	.select-metadata  {
+		h3 {
+			font-size:1em;
+		}
+
+		h4 {
+			font-size:0.9em;
+		}		
+	}
+}
+
+.mirador-main-menu-bar {
+	height:38px;
+
+	ul.mirador-main-menu {
+		padding:0;
+		li {
+			margin-left:10px;
+		}
+	} 
+}
+

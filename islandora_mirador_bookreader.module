@@ -1,0 +1,77 @@
+<?php
+
+/**
+ * @file
+ * Defines all the hooks this module implements.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function islandora_mirador_bookreader_menu() {
+  return array(
+    'admin/islandora/islandora_viewers/mirador_bookreader' => array(
+      'title' => 'Mirador BookReader',
+      'description' => 'Configure the Mirador BookReader.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('islandora_mirador_bookreader_admin_settings_form'),
+      'access arguments' => array('administer site configuration'),
+      'file' => 'includes/admin.form.inc',
+      'type' => MENU_NORMAL_ITEM,
+    )
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function islandora_mirador_bookreader_theme() {
+  return array(
+    'islandora_mirador_bookreader' => array(
+      'file' => 'theme/theme.inc',
+      'template' => 'theme/islandora-mirador-bookreader',
+      'variables' => array(
+        'object' => NULL,
+        'datastream_id' => 'JP2',
+        'page_progression' => 'rl',
+        'pages' => array(),
+      ),
+    ),
+    'islandora_mirador_bookreader_book_info' => array(
+      'file' => 'theme/theme.inc',
+      'variables' => array('object' => NULL),
+    ),
+  );
+}
+
+/**
+ * Implements hook_islandora_viewer_info().
+ */
+function islandora_mirador_bookreader_islandora_viewer_info() {
+  return array(
+    'islandora_mirador_bookreader' => array(
+      'label' => t('Mirador BookReader'),
+      'description' => t('Mirador BookReader.'),
+      'configuration' => 'admin/islandora/islandora_viewers/mirador_bookreader',
+      'callback' => 'islandora_mirador_bookreader_viewer_callback',
+      'model' => array(
+        'islandora:bookCModel',
+        'islandora:newspaperIssueCModel',
+        'islandora:manuscriptCModel',
+      ),
+    ),
+  );
+}
+
+/**
+ * Callback function for the viewer.
+ *
+ * @param array $params
+ *   The params for the theme function 'islandora_internet_archive_bookreader'.
+ *
+ * @return string
+ *   HTML repersentation of the Internet Archive BookReader.
+ */
+function islandora_mirador_bookreader_viewer_callback(array $params) {
+  return theme('islandora_mirador_bookreader', $params);
+}
