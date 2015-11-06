@@ -11,6 +11,15 @@ $(function() {
         // This array allows the user to specify which of the included manifests should appear
         // in the workspace, and what the configuration of the window (zoom level, open panels, etc.)
         // ought to be. To begin with, we will leave it blank.
-        "windowObjects": []
+        "windowObjects": [],
+	'mainMenuSettings': {
+	      'show': true,
+	      'buttons' : {
+		'bookmark' : false,
+		'layout' : true,
+		'options' : false,
+		'fullScreenViewer': true
+	      }
+	}
       });
     });
