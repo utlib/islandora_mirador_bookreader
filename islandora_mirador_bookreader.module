@@ -67,7 +67,7 @@ function islandora_mirador_bookreader_islandora_viewer_info() {
  * Callback function for the viewer.
  *
  * @param array $params
- *   The params for the theme function 'islandora_internet_archive_bookreader'.
+ *   The params for the theme function 'islandora_mirador_bookreader'.
  *
  * @return string
  *   HTML repersentation of the Internet Archive BookReader.

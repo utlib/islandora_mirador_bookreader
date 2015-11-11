@@ -8,21 +8,29 @@
  * Implements hook_preprocess_theme().
  */
 function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(array &$variables) {
-  //dpm($variables);
+
+  global $user;
 
   $object = $variables['object'];
   
   module_load_include('inc', 'islandora', 'includes/metadata');
+  
   $variables['metadata'] = islandora_retrieve_metadata_markup($object);
   
-  $dsid = $variables['datastream_id'];
+  //$dsid = $variables['datastream_id'];
 
   $library_path = libraries_get_path('mirador');
 
   $module_path = drupal_get_path('module', 'islandora_mirador_bookreader');
 
-  //$search_uri = module_exists('islandora_solr') ? url("internet_archive_bookreader_search/{$object->id}/TERM", array('absolute' => TRUE)) : NULL;
+  //module_load_include('inc', 'islandora', 'includes/tuque');
+  //module_load_include('inc', 'islandora', 'includes/tuque_wrapper');
 
+  //$tuque = islandora_get_tuque_connection();
+
+  //$islandora_object = islandora_object_load($object->id);
+  //$sc = $islandora_object['SC'];
+  
 /*
   module_load_include('inc', 'islandora', 'includes/authtokens');
   $pages = array();
@@ -63,15 +71,15 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
       'content_type' => variable_get('islandora_internet_archive_bookreader_content_type', 'book'),
     ),
   );
-
-  drupal_add_js($data_array, 'setting');
 */
+
+  drupal_add_js(array('islandora_mirador_bookreader' => array('pid' => $object->id)), array('type' => 'setting'));
 
   drupal_add_css("$library_path/css/mirador-combined.css");
   drupal_add_css("$module_path/css/mirador_custom.css");
 
   drupal_add_js("$library_path/mirador.js", array('group' => JS_LIBRARY));
-  drupal_add_js("$module_path/js/islandora_mirador_custom.js", array('group' => JS_LIBRARY));
+  drupal_add_js("$module_path/js/islandora_mirador.js", array('group' => JS_LIBRARY));
 
   drupal_add_library('system', 'effects');
   drupal_add_library('system', 'ui.slider');
