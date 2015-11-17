@@ -26,7 +26,8 @@ $(function() {
         "windowObjects": [
 		{
 			"loadedManifest":manifest_url,
-			"viewType":"ImageView"
+			"viewType":"ImageView",
+			"annotationLayer":false
 		}
 	]
       });

@@ -7,7 +7,7 @@
  */
 
 ?>
-<div id="mirador-reader" class="islandora-mirador-bookreader mirador-reader">
+<div id="mirador-bookreader" class="islandora-mirador-bookreader mirador-reader">
 </div>
 
 <?php print $metadata; ?>
