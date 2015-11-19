@@ -28,11 +28,16 @@ function islandora_mirador_bookreader_admin_settings_form(array $form, array &$f
 		'#description' => t('URL of the server that serves IIIF compliant images'),
 		'#default_value' => $get_default_value('islandora_mirador_bookreader_iiif_server')
 	),
-	'islandora_mirador_bookreader_manifest_ds' => array(
-                '#type' => 'textfield',
-                '#title' => t('Manifest Datastream'),
-                '#description' => t('Name of the datastream of the Fedora object that is the image'),
-		'#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_ds')
+	'islandora_mirador_bookreader_default_page_view' => array(
+		'#type' => 'select',
+	      '#title' => t('Default page view'),
+	      '#description' => t('Mirador viewType. https://github.com/IIIF/mirador/blob/11cc39379e7346b1301c3163a5f22c8fe396900f/js/src/settings.js#L41'),
+	      '#default_value' => $get_default_value('islandora_mirador_bookreader_default_page_view', 1),
+	      '#options' => array(
+		1 => 'Image',
+		2 => 'Book',
+		3 => 'Thumbnails',
+	      )
         )
   );
   return system_settings_form($form);
