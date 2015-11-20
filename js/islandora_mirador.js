@@ -15,7 +15,7 @@ $(function() {
 			view_type = "ImageView";
 	}
 	console.log("The view type from config is " + view_type + " <<<<");
-	var manifest_url = "https://paleography.library.utoronto.ca/islandora/object/" + pid + "/datastream/SC/";	
+	var manifest_url = "https://paleographydev.library.utoronto.ca/islandora/object/" + pid + "/datastream/SC/";	
 
       Mirador({
         "id": "mirador-bookreader", // The CSS ID selector for the containing element.
@@ -34,6 +34,19 @@ $(function() {
 		}
 	},
 	"showAddFromURLBox":false,	
+
+	'buildPath' : '/sites/all/libraries/mirador/',
+
+	'i18nPath' : 'locales/',
+
+	'imagesPath' : 'images/',
+
+	'logosPath' : 'logos/',
+
+	'repoImages' : {
+		'other': 'other_images/'
+	},
+
         "windowObjects": [
 		{
 			"loadedManifest":manifest_url,

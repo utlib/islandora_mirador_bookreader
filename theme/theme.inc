@@ -70,10 +70,11 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
 
   drupal_add_js("$library_path/mirador.js", array('group' => JS_LIBRARY));
   drupal_add_js("$module_path/js/islandora_mirador.js", array('group' => JS_LIBRARY));
-
+/*
   drupal_add_library('system', 'effects');
   drupal_add_library('system', 'ui.slider');
   drupal_add_library('system', 'ui.draggable');
+*/
 }
 
 /**

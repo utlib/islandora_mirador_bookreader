@@ -1,5 +1,14 @@
+body {
+  overflow: auto; }
+
+#book-viewer {
+  padding-top: 10px; }
+
+.layout-slot {
+  width: 100%; }
+
 .mirador-reader {
-  width: 725px;
+  width: 100%;
   min-height: 1000px;
   position: relative !important; }
   .mirador-reader .content-container {
@@ -13,6 +22,8 @@
     font-size: 1em; }
   .mirador-reader .select-metadata h4 {
     font-size: 0.9em; }
+  .mirador-reader .layer-slot {
+    width: 100% !important; }
 
 .mirador-main-menu-bar {
   height: 38px; }
@@ -20,5 +31,3 @@
     padding: 0; }
     .mirador-main-menu-bar ul.mirador-main-menu li {
       margin-left: 10px; }
-
-/*# sourceMappingURL=mirador_custom.css.map */

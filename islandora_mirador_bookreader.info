@@ -1,5 +1,5 @@
 name = "Islandora Mirador Bookreader"
-description = "Implements Mirador BookReader for use with Islandora."
+description = "Mirador IIIF compliant Book Viewer based on Mirador 2.0.0."
 package = Islandora Viewers
 dependencies[] = libraries
 dependencies[] = islandora_paged_content
