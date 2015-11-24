@@ -1,5 +1,19 @@
+body {
+	overflow:auto;
+}
+
+#book-viewer {
+	padding-top: 10px;
+}
+
+.layout-slot {
+	width:100%;
+}
+
+
+
 .mirador-reader {
-	width: 725px;
+	width: 100%;
 	min-height: 1000px;
 	position: relative !important;
 
@@ -13,7 +27,6 @@
 		margin: 0;
 		margin-left: 35px;
 	}
-	
 	.select-metadata  {
 		h3 {
 			font-size:1em;
@@ -22,6 +35,9 @@
 		h4 {
 			font-size:0.9em;
 		}		
+	}
+	.layer-slot {
+		width:100% !important;
 	}
 }
 

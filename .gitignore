@@ -6,3 +6,4 @@
 *.out
 js/islandora_loader.js
 *.komodoproject
+css/.sass-cache/
