@@ -43,10 +43,6 @@ $(function() {
 
 	'logosPath' : 'logos/',
 
-	'repoImages' : {
-		'other': 'other_images/'
-	},
-
         "windowObjects": [
 		{
 			"loadedManifest":manifest_url,
