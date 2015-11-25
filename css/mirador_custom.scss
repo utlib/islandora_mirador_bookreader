@@ -10,8 +10,6 @@ body {
 	width:100%;
 }
 
-
-
 .mirador-reader {
 	width: 100%;
 	min-height: 1000px;
@@ -19,6 +17,10 @@ body {
 
 	.content-container {
 		margin-top:40px;
+	
+		.panel-thumbnail-view {
+			overflow-x:initial;
+		}
 	}
 
 	.window-manifest-title {
@@ -26,6 +28,10 @@ body {
 		padding: 0;
 		margin: 0;
 		margin-left: 35px;
+		overflow:initial;
+	}
+	.manifest-info {
+		overflow:hidden;
 	}
 	.select-metadata  {
 		h3 {
