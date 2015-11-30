@@ -24,8 +24,10 @@ $(function() {
       Mirador({
         "id": "mirador-bookreader",
         "data": [ 
-        { "manifestUri": manifest_url, "location": "University of Toronto"}
-        //{ "manifestUri": "https://sz-paleographydev.library.utoronto.ca/sites/sz-paleographydev.library.utoronto.ca/files/json/toronto.json", "location": "University of Toronto"}
+        	{
+			"manifestUri": manifest_url, "location": "University of Toronto"
+	        	//"manifestUri": "https://paleographydev.library.utoronto.ca/sites/paleographydev.library.utoronto.ca/files/js/toronto.json", "location": "University of Toronto"
+		}
         ],
 	'mainMenuSettings': {
 		'show':false,
