@@ -54,7 +54,7 @@ $(function() {
 			"loadedManifest":manifest_url,
 			"viewType":view_type,
 			"annotationLayer":false,
-			"displayLayout": false,
+			"displayLayout": true,
 			"bottomPanel" : true,
 			"sidePanel" : false
 		}
