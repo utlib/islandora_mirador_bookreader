@@ -14,7 +14,7 @@ $(function() {
 		default:
 			view_type = "ImageView";
 	}
-	console.log("The view type from config is " + view_type + " <<<<");
+	//console.log("The view type from config is " + view_type + " <<<<");
 	var manifest_url = "https://paleographydev.library.utoronto.ca/islandora/object/" + pid + "/datastream/SC/";	
 
       Mirador({
@@ -37,11 +37,17 @@ $(function() {
 
 	'buildPath' : '/sites/all/libraries/mirador/',
 
-	'i18nPath' : 'locales/',
+	'i18nPath' : '/sites/all/libraries/mirador/locales/',
 
-	'imagesPath' : 'images/',
+	'imagesPath' : '/sites/all/libraries/mirador/images/',
 
-	'logosPath' : 'logos/',
+	'logosPath' : '/sites/all/libraries/mirador/logos/',
+	
+	'logosLocation' : '/sites/all/libraries/mirador/images/logos/',
+
+	'repoImages' : {
+		'other': 'iiif_logo.png'
+	},
 
         "windowObjects": [
 		{
@@ -54,4 +60,6 @@ $(function() {
 		}
 	]
       });
-    });
+	
+	$.getScript("https://code.jquery.com/jquery-migrate-1.2.1.js");
+});
