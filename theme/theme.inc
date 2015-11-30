@@ -22,47 +22,6 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
 
   $view_type = variable_get('islandora_mirador_bookreader_default_page_view');
   
-/*
-  module_load_include('inc', 'islandora', 'includes/authtokens');
-  $pages = array();
-  foreach ($variables['pages'] as $page_pid => $info) {
-    $token = islandora_get_object_token($page_pid, $dsid, 2);
-
-    // TODO: Slap the widths/heights for pages in here, and make 'em be used in
-    // on the JS side...  Probably break out this structure generation into a
-    // separate function?
-    $pages[] = $info + array(
-      'uri' => url("islandora/object/{$page_pid}/datastream/{$dsid}/view", array(
-        'absolute' => TRUE,
-        'query' => array(
-          'token' => $token,
-        ),
-      )),
-    );
-  }
-
-  global $base_url;
-  $data_array = array(
-    'islandoraInternetArchiveBookReader' => array(
-      'book' => $object->id,
-      'info' => theme('islandora_internet_archive_bookreader_book_info', array('object' => $object)),
-      'label' => $object->label,
-      'searchUri' => $search_uri,
-      'textUri' => url('internet_archive_bookreader_text/PID', array('absolute' => TRUE)),
-      'dimensionsUri' => url('internet_archive_bookreader_dimensions/PID', array('absolute' => TRUE)),
-      'djatokaUri' => variable_get('islandora_paged_content_djatoka_url', 'http://localhost:8080/adore-djatoka'),
-      'imagesFolderUri' => url("$base_url/$library_path/BookReader/images/", array('absolute' => TRUE, 'external' => TRUE)),
-      'compression' => variable_get('islandora_internet_archive_bookreader_compression', '4'),
-      'pageProgression' => $variables['page_progression'],
-      'pages' => $pages,
-      'pageCount' => count($pages),
-      'overlayOpacity' => variable_get('islandora_internet_archive_bookreader_overlay_opacity', '0.5'),
-      'mode' => (int) variable_get('islandora_internet_archive_bookreader_default_page_view', 1),
-      'mobilize' => variable_get('islandora_internet_archive_bookreader_mobile_full_screen', FALSE),
-      'content_type' => variable_get('islandora_internet_archive_bookreader_content_type', 'book'),
-    ),
-  );
-*/
   drupal_add_js(array('islandora_mirador_bookreader' => array('pid' => $object->id, 'view_type' => $view_type)), array('type' => 'setting'));
 
   drupal_add_css("$library_path/css/mirador-combined.css");
@@ -70,11 +29,6 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
 
   drupal_add_js("$library_path/mirador.js", array('group' => JS_LIBRARY));
   drupal_add_js("$module_path/js/islandora_mirador.js", array('group' => JS_LIBRARY));
-/*
-  drupal_add_library('system', 'effects');
-  drupal_add_library('system', 'ui.slider');
-  drupal_add_library('system', 'ui.draggable');
-*/
 }
 
 /**
