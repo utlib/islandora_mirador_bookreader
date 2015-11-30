@@ -23,6 +23,9 @@ body {
     overflow: initial; }
   .mirador-reader .manifest-info {
     overflow: hidden; }
+    .mirador-reader .manifest-info .dropdown.slot-controls {
+      width: 190px;
+      height: 240px; }
   .mirador-reader .select-metadata h3 {
     font-size: 1em; }
   .mirador-reader .select-metadata h4 {
@@ -36,5 +39,3 @@ body {
     padding: 0; }
     .mirador-main-menu-bar ul.mirador-main-menu li {
       margin-left: 10px; }
-
-/*# sourceMappingURL=mirador_custom.css.map */

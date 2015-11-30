@@ -32,6 +32,11 @@ body {
 	}
 	.manifest-info {
 		overflow:hidden;
+	
+		.dropdown.slot-controls {
+			width:190px;
+			height:240px;
+		}
 	}
 	.select-metadata  {
 		h3 {
