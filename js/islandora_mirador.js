@@ -56,7 +56,9 @@ $(function() {
 			"annotationLayer":false,
 			"displayLayout": true,
 			"bottomPanel" : true,
-			"sidePanel" : false
+			"sidePanel" : false,
+			//"overlay": false,
+			"overlayMetadata": false,
 		}
 	]
       });
