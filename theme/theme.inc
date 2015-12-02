@@ -10,10 +10,12 @@
 function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(array &$variables) {
 
   global $user;
+  global $base_url;
 
   // get metadata below the viewer
   $object = $variables['object'];
   module_load_include('inc', 'islandora', 'includes/metadata');
+  module_load_include('inc', 'islandora_mirador_bookreader', 'includes/utilities');
   $variables['metadata'] = islandora_retrieve_metadata_markup($object);
 
   // get the paths
@@ -21,8 +23,11 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
   $module_path = drupal_get_path('module', 'islandora_mirador_bookreader');
 
   $view_type = variable_get('islandora_mirador_bookreader_default_page_view');
-  
-  drupal_add_js(array('islandora_mirador_bookreader' => array('pid' => $object->id, 'view_type' => $view_type)), array('type' => 'setting'));
+  $parent_pids_to_include = variable_get('islandora_mirador_bookreader_parent_pid');
+
+  $book_objects_sc_manifest = drupal_json_encode(get_book_objects_sc_manifest($parent_pids_to_include));
+
+  drupal_add_js(array('islandora_mirador_bookreader' => array('sc_manifest_list' => $book_objects_sc_manifest, 'base_url' => $base_url, 'pid' => $object->id, 'view_type' => $view_type)), array('type' => 'setting'));
 
   drupal_add_css("$library_path/css/mirador-combined.css");
   drupal_add_css("$module_path/css/mirador_custom.css");

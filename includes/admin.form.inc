@@ -39,7 +39,14 @@ function islandora_mirador_bookreader_admin_settings_form(array $form, array &$f
 		2 => 'Book',
 		3 => 'Thumbnails',
 	      )
-        )
+        ),
+
+	'islandora_mirador_bookreader_parent_pid' => array(
+		'#type' => 'textfield',
+		'#title' => t('List of parent PID to have book objects show up in \'all objects\''),
+		'#default_value' => $get_default_value('islandora_mirador_bookreader_parent_pid', ''),
+		'#description' => t('Please separate each PID by commas...')
+	)
   );
   return system_settings_form($form);
 }
