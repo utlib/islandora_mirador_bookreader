@@ -6,3 +6,5 @@ dependencies[] = islandora_paged_content
 dependencies[] = colorbox
 version = 7.x-1.4
 core = 7.x
+
+files[] = includes/MyFedoraObject.inc

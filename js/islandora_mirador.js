@@ -18,17 +18,16 @@ $(function() {
 
 	// The manifest_url is dynamically generated based on the pid
 	var pid = Drupal.settings.islandora_mirador_bookreader.pid;
-	var manifest_url = "https://paleographydev.library.utoronto.ca/islandora/object/" + pid + "/datastream/SC/";	
+
+	var manifest_list =JSON.parse(Drupal.settings.islandora_mirador_bookreader.sc_manifest_list);
+
+	//put a base url
+	var manifest_url = "https://cy-paleographydev.library.utoronto.ca/islandora/object/" + pid + "/datastream/SC/";	
 
 	// This is the main Mirador constructor. The settings corresponds to settings.js in the source code, see there for more help
       Mirador({
         "id": "mirador-bookreader",
-        "data": [ 
-        	{
-			"manifestUri": manifest_url, "location": "University of Toronto"
-	        	//"manifestUri": "https://paleographydev.library.utoronto.ca/sites/paleographydev.library.utoronto.ca/files/js/toronto.json", "location": "University of Toronto"
-		}
-        ],
+        "data": manifest_list,
 	'mainMenuSettings': {
 		'show':false,
 		'buttons':{
@@ -64,7 +63,6 @@ $(function() {
 		}
 	]
       });
-	
 	// Mirador loads its own jQuery version (1.9.1). We need to raise Drupal's jQuery version using the migrate library, if Drupal's behind
 	$.getScript("https://code.jquery.com/jquery-migrate-1.2.1.js");
 });
