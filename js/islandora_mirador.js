@@ -44,7 +44,7 @@ $(function() {
 
 	'imagesPath' : '/sites/all/libraries/mirador/images/',
 
-	'logosPath' : '/sites/all/libraries/mirador/logos/',
+	'logosPath' : '/sites/all/libraries/mirador/images/logos/',
 	
 	'logosLocation' : '/sites/all/libraries/mirador/images/logos/',
 
