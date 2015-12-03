@@ -20,7 +20,7 @@ body {
     padding: 0;
     margin: 0;
     margin-left: 35px;
-    overflow: initial; }
+    overflow: hidden; }
   .mirador-reader .manifest-info {
     overflow: hidden; }
     .mirador-reader .manifest-info .dropdown.slot-controls {
@@ -39,3 +39,6 @@ body {
     padding: 0; }
     .mirador-main-menu-bar ul.mirador-main-menu li {
       margin-left: 10px; }
+
+.mirador-pan-zoom-toggle {
+  bottom: 110px; }
