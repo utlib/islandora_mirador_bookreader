@@ -65,8 +65,6 @@ $(function() {
 		}
 	]
       });
-	// Mirador loads its own jQuery version (1.9.1). We need to raise Drupal's jQuery version using the migrate library, if Drupal's behind
-	$.getScript("https://code.jquery.com/jquery-migrate-1.2.1.js");
 });
 
 function scrollToMetadata() {
