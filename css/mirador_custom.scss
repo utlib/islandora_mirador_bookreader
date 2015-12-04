@@ -28,7 +28,8 @@ body {
 		padding: 0;
 		margin: 0;
 		margin-left: 35px;
-		overflow:initial;
+		overflow:hidden;
+		height:40px;
 	}
 	.manifest-info {
 		overflow:hidden;
@@ -65,4 +66,14 @@ body {
 
 .mirador-pan-zoom-toggle {
 	bottom:110px;
+}
+
+#manifest-search {
+	padding:5px;
+	margin:0;
+	height:30px;
+}
+
+.bottomPanel {
+	z-index:2;
 }
