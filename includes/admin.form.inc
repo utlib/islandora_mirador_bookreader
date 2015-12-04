@@ -57,16 +57,27 @@ function islandora_mirador_bookreader_generate_json_form($form, &$form_state) {
 
 	if (!file_exists($scmanifest_json_file_uri)) {
 		$form['title'] = array(
-      		'#markup' => t('There\'s no JSON file, please click the button below to generate JSON file<br>')
+      		'#markup' => t("There's no JSON file, please click the button below to generate JSON file\n")
     	);
+    	$form['islandora_mirador_generate_json'] = array (
+	        '#type' => 'submit',
+	        '#value' => t('Generate JSON file for Mirador'),
+	        '#weight' => 1,
+	        '#submit' => array('__generate_mirador_submit__')
+		);
+	} else {
+		$form['title'] = array(
+      		'#markup' => t("JSON file was created at ".date ("F d Y H:i:s.", filemtime($scmanifest_json_file_uri))."<br>")
+    	);
+    	$form['islandora_mirador_generate_json'] = array (
+	        '#type' => 'submit',
+	        '#value' => t('Re-Generate JSON file for Mirador'),
+	        '#weight' => 1,
+	        '#submit' => array('__generate_mirador_submit__')
+		);
 	}
 
-	$form['islandora_mirador_generate_json'] = array (
-        '#type' => 'submit',
-        '#value' => t('Generate JSON file for Mirador'),
-        '#weight' => 1,
-        '#submit' => array('__generate_mirador_submit__')
-	);
+
 
 	return $form;
 
