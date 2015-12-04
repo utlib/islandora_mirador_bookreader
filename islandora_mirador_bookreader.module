@@ -18,7 +18,28 @@ function islandora_mirador_bookreader_menu() {
       'access arguments' => array('administer site configuration'),
       'file' => 'includes/admin.form.inc',
       'type' => MENU_NORMAL_ITEM,
-    )
+    ),
+    'admin/islandora/islandora_viewers/mirador_bookreader/config' => array(
+      'title' => 'Mirador BookReader Configuration',
+      'description' => 'Configure the Mirador BookReader.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('islandora_mirador_bookreader_admin_settings_form'),
+      'access arguments' => array('administer site configuration'),
+      'file' => 'includes/admin.form.inc',
+      'type' => MENU_DEFAULT_LOCAL_TASK,
+      'weight' => 0,
+    ),
+    'admin/islandora/islandora_viewers/mirador_bookreader/json_generate' => array(
+      'title' => 'JSON for IIIF manifest',
+      'description' => 'JSON file for IIIF manifest',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => array('islandora_mirador_bookreader_generate_json_form'),
+      'access arguments' => array('administer site configuration'),
+      'file' => 'includes/admin.form.inc',
+      'type' => MENU_LOCAL_TASK,
+      'weight' => 1,
+    ),
+
   );
 }
 

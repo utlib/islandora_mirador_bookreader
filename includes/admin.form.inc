@@ -16,7 +16,7 @@
  * @return array
  *   The Drupal form definition.
  */
-function islandora_mirador_bookreader_admin_settings_form(array $form, array &$form_state) {
+function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
   $get_default_value = function($name, $default) use($form_state) {
     return isset($form_state['values'][$name]) ? $form_state['values'][$name] : variable_get($name, $default);
   };
@@ -49,4 +49,19 @@ function islandora_mirador_bookreader_admin_settings_form(array $form, array &$f
 	)
   );
   return system_settings_form($form);
+}
+
+function islandora_mirador_bookreader_generate_json_form($form, &$form_state) {
+
+	$form = array (
+	'islandora_mirador_generate_json' => array(
+        '#type' => 'submit',
+        '#value' => t('Generate JSON file for Mirador'),
+        '#weight' => 1,
+        '#submit' => array('generate_mirador_submit')
+	)
+	);
+
+	return $form;
+
 }
