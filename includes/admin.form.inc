@@ -16,7 +16,7 @@
  * @return array
  *   The Drupal form definition.
  */
-function islandora_mirador_bookreader_admin_settings_form(array $form, array &$form_state) {
+function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
   $get_default_value = function($name, $default) use($form_state) {
     return isset($form_state['values'][$name]) ? $form_state['values'][$name] : variable_get($name, $default);
   };
@@ -49,4 +49,38 @@ function islandora_mirador_bookreader_admin_settings_form(array $form, array &$f
 	)
   );
   return system_settings_form($form);
+}
+
+function islandora_mirador_bookreader_generate_json_form($form, &$form_state) {
+
+	$scmanifest_json_file_uri = 'public://sc_manifest_list.json';
+
+	if (!file_exists($scmanifest_json_file_uri)) {
+		$form['title'] = array(
+      		'#markup' => t('There\'s no JSON file, please click the button below to generate JSON file<br>')
+    	);
+	}
+
+	$form['islandora_mirador_generate_json'] = array (
+        '#type' => 'submit',
+        '#value' => t('Generate JSON file for Mirador'),
+        '#weight' => 1,
+        '#submit' => array('__generate_mirador_submit__')
+	);
+
+	return $form;
+
+}
+
+function __generate_mirador_submit__($form, &$form_state) {
+
+	module_load_include('inc', 'islandora_mirador_bookreader', 'includes/utilities');
+
+	$parent_pids_to_include = variable_get('islandora_mirador_bookreader_parent_pid');
+
+	$json_to_be_written = get_book_objects_sc_manifest($parent_pids_to_include);
+
+	if (file_save_data(json_encode($json_to_be_written), 'public://sc_manifest_list.json', FILE_EXISTS_REPLACE)) {
+		drupal_set_message(t('Successfully generated sc_manifest_list.json file'), 'status');
+	}
 }

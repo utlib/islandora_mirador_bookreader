@@ -16,10 +16,12 @@ $(function() {
 	}
 	//console.log("The view type from config is " + view_type + " <<<<");
 
+	var json_path = Drupal.settings.islandora_mirador_bookreader.json_file_directory+'sc_manifest_list.json';
+
+	$.getJSON(json_path, function(data) {
+
 	// The manifest_url is dynamically generated based on the pid
 	var pid = Drupal.settings.islandora_mirador_bookreader.pid;
-
-	var manifest_list =JSON.parse(Drupal.settings.islandora_mirador_bookreader.sc_manifest_list);
 
 	var base_url = Drupal.settings.islandora_mirador_bookreader.base_url;
 
@@ -29,7 +31,7 @@ $(function() {
 	// This is the main Mirador constructor. The settings corresponds to settings.js in the source code, see there for more help
       Mirador({
         "id": "mirador-bookreader",
-        "data": manifest_list,
+        "data": data,
 	'mainMenuSettings': {
 		'show':false,
 		'buttons':{
@@ -65,6 +67,8 @@ $(function() {
 		}
 	]
       });
+	});
+
 });
 
 function scrollToMetadata() {
