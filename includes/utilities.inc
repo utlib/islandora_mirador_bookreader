@@ -48,10 +48,13 @@ function islandora_internet_archive_bookreader_remap_highlighting_for_bookreader
 function get_book_objects_sc_manifest($list_of_pid) {
   global $base_url;
 
+  if (!libraries_load('utlfedoraobject'))
+    return array();
+
   $pids = explode(",", $list_of_pid);
 
   $user = user_load(1);
-  $fo = new MyFedoraObject($user->name, $user->pass);
+  $fo = new UTLFedoraObject($user->name, $user->pass);
 
   $manifest_url_list = array();
 
