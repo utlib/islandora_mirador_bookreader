@@ -72,7 +72,7 @@ function islandora_mirador_bookreader_generate_json_form($form, &$form_state) {
     	);
     	$form['islandora_mirador_generate_json'] = array (
 	        '#type' => 'submit',
-	        '#value' => t('Re-Generate JSON file for Mirador'),
+	        '#value' => t('Re-generate JSON file for Mirador'),
 	        '#weight' => 1,
 	        '#submit' => array('__generate_mirador_submit__')
 		);
