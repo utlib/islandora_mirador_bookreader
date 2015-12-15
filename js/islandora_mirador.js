@@ -62,8 +62,7 @@ $(function() {
 			"displayLayout": true,
 			"bottomPanel" : true,
 			"sidePanel" : false,
-			//"overlay": false,
-			"overlayMetadata": false,
+			"overlayMetadata": false
 		}
 	]
       });
