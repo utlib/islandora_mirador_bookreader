@@ -52,4 +52,17 @@ body {
 .bottomPanel {
   z-index: 2; }
 
-/*# sourceMappingURL=mirador_custom.css.map */
+/* Undo mirador-combined.css */
+#main-menu .container {
+  overflow: initial; }
+  #main-menu .container #main-menu-navbar .dropdown li {
+    margin: initial;
+    background-color: initial;
+    padding: initial;
+    width: initial;
+    text-align: initial; }
+  #main-menu .container #main-menu-navbar .dropdown li:hover {
+    border-left: initial; }
+  #main-menu .container #main-menu-navbar .dropdown a {
+    opacity: 1;
+    pointer-events: initial; }
