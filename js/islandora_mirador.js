@@ -71,9 +71,10 @@ $(function() {
 
 });
 
-function scrollToMetadata() {
-	$('html, body').animate({
-		scrollTop: $('.islandora-metadata').offset().top
-	}, 1000);	
-}
 })(jQuery);
+
+function scrollToMetadata() {
+        jQuery('html, body').animate({
+                scrollTop: jQuery('.islandora-metadata').offset().top
+        }, 1000);
+}
