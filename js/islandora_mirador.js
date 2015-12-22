@@ -1,3 +1,4 @@
+(function($) {
 $(function() {
 	// This view type corresponds with the Drupal module setting
 	var view_type = Drupal.settings.islandora_mirador_bookreader.view_type;	
@@ -62,8 +63,7 @@ $(function() {
 			"displayLayout": true,
 			"bottomPanel" : true,
 			"sidePanel" : false,
-			//"overlay": false,
-			"overlayMetadata": false,
+			"overlayMetadata": false
 		}
 	]
       });
@@ -71,8 +71,10 @@ $(function() {
 
 });
 
+})(jQuery);
+
 function scrollToMetadata() {
-	$('html, body').animate({
-		scrollTop: $('.islandora-metadata').offset().top
-	}, 1000);	
+        jQuery('html, body').animate({
+                scrollTop: jQuery('.islandora-metadata').offset().top
+        }, 1000);
 }

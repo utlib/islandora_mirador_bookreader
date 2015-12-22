@@ -29,6 +29,7 @@ body {
 		margin: 0;
 		margin-left: 35px;
 		overflow:hidden;
+		height:40px;
 	}
 	.manifest-info {
 		overflow:hidden;
@@ -66,3 +67,41 @@ body {
 .mirador-pan-zoom-toggle {
 	bottom:110px;
 }
+
+#manifest-search {
+	padding:5px;
+	margin:0;
+	height:30px;
+}
+
+.bottomPanel {
+	z-index:2;
+}
+
+/* Undo mirador-combined.css */
+#main-menu {
+	.container {	
+		overflow:initial;
+
+		#main-menu-navbar .dropdown {
+			li {
+				margin: initial;
+				background-color: initial;
+				padding: initial;
+				width: initial;
+				text-align: initial; 
+			}
+
+			li:hover {
+				border-left: initial;
+			}
+	
+			a {
+				opacity:1;
+				pointer-events:initial;	
+			}
+		}
+	}
+}
+
+
