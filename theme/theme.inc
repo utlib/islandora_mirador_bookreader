@@ -35,8 +35,6 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
 
   drupal_add_js("$library_path/mirador.js", array('group' => JS_LIBRARY));
   drupal_add_js("$module_path/js/islandora_mirador.js", array('group' => JS_LIBRARY));
-  // Mirador loads its own jQuery version (1.9.1). We need to raise Drupal's jQuery version using the migrate library, if Drupal's behind
-  drupal_add_js("$module_path/js/jquery_migrate_1.2.1.js", array('group' => JS_LIBRARY));
 }
 
 /**
