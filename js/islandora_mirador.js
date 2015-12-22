@@ -1,3 +1,4 @@
+(function($) {
 $(function() {
 	// This view type corresponds with the Drupal module setting
 	var view_type = Drupal.settings.islandora_mirador_bookreader.view_type;	
@@ -75,3 +76,4 @@ function scrollToMetadata() {
 		scrollTop: $('.islandora-metadata').offset().top
 	}, 1000);	
 }
+})(jQuery);
