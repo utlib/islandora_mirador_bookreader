@@ -25,14 +25,17 @@ body {
 
 	.window-manifest-title {
 		font-size: 1.5em;
-		padding: 0;
+		padding: 5px 0 0 10px;
 		margin: 0;
 		margin-left: 35px;
 		overflow:hidden;
 		height:40px;
+		color: #fff;
 	}
+
 	.manifest-info {
 		overflow:hidden;
+		background-color: #b43d2e;
 	
 		.dropdown.slot-controls {
 			width:190px;
@@ -40,16 +43,34 @@ body {
 		}
 	}
 	.select-metadata  {
+		width: 300px; 
+
 		h3 {
 			font-size:1em;
+			padding: 5px 0;
 		}
 
 		h4 {
-			font-size:0.9em;
+			font-size: 0.9em;
+			padding: 0 5px 0 0;
+			line-height: 1;
+			margin: 5px 0 7px 0;
+			font-family: 'Open Sans', 'Helvetica Neue', sans-serif !important;
+		}
+
+		h4.repository-label { 
+			position: static;
+			line-height: 1.5;
+			margin: 0;
+			font-family: 'EB Garamond', 'Times New Roman', serif !important;  
 		}		
 	}
 	.layer-slot {
 		width:100% !important;
+	}
+
+	.repo-image {
+		display:none;
 	}
 }
 
@@ -68,10 +89,12 @@ body {
 	bottom:110px;
 }
 
+#manifest-search-form label { display: none; }
+
 #manifest-search {
-	padding:5px;
+	padding:0 10px;
 	margin:0;
-	height:30px;
+	height: 30px !important;
 }
 
 .bottomPanel {
@@ -102,6 +125,49 @@ body {
 			}
 		}
 	}
+}
+
+.islandora-mirador-bookreader #load-controls { 
+	float: none; 
+	height: auto
+}
+
+.islandora-mirador-bookreader .select-results {
+	clear: both;
+    margin-left: 0;
+    height: 800px;
+    overflow-y: scroll;
+    padding-top: 0;
+}
+
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-window-menu, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-toc, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-image-view, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-thumbs-view, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-metadata-view 
+{ 
+	color: #fff !important;
+}
+
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-window-menu.selected, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-toc.selected, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-image-view.selected, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-thumbs-view.selected, 
+.islandora-mirador-bookreader .mirador-viewer a.mirador-icon-metadata-view.selected 
+{ 
+	color: #000 !important;
+}
+.islandora-mirador-bookreader .mirador-viewer ul.dropdown { color:#000 !important }
+
+.islandora-mirador-bookreader .remaining-items { 
+	background: silver;
+}
+.islandora-mirador-bookreader .remaining-items h3 {
+	font-size: 17px !important;
+	text-align: right; 
+	padding: 0 10px 0 0;
+	line-height: 1;
+	font-family: 'Open Sans', 'Helvetica Neue', sans-serif !important;
 }
 
 
