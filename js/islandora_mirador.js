@@ -27,12 +27,14 @@ $(function() {
 	var base_url = Drupal.settings.islandora_mirador_bookreader.base_url;
 
 	//put a base url
-	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/SC/";	
+	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/SC/view";	
 
 	// This is the main Mirador constructor. The settings corresponds to settings.js in the source code, see there for more help
+	
       Mirador({
         "id": "mirador-bookreader",
         "data": data,
+	//"data":[{ "manifestUri": manifest_url, "location": "University of Toronto"}],
 	'mainMenuSettings': {
 		'show':false,
 		'buttons':{
