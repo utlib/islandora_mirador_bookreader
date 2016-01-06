@@ -31,13 +31,12 @@ $(function() {
 	//put a base url
 	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/SC/view";	
 
-	var current_manifest_url = base_url + "/islandora/object/" + current_pid + "/datastream/SC/view"; 
-
 	// Get the current pid from the url
 	var pathname = window.location.pathname;
 		pathname = pathname.split("/");
 	var current_pid = pathname[3];
 		current_pid = current_pid.replace('paleography%3A', 'paleography:');
+	var current_manifest_url = base_url + "/islandora/object/" + current_pid + "/datastream/SC/view"; 
 
 	// Create a new data array
 	var new_data = []; 
@@ -46,7 +45,8 @@ $(function() {
 	// This is to make the Mirador viewer load faster
 
 	$.each(data, function(idx, obj) {
-		if(obj.manifestUri == current_manifest_url) { 
+		if(obj.manifestUri == current_manifest_url) {
+		console.log(current_pid); 
 			new_data.unshift(obj); 
 		} else { new_data.push(obj); }
 	});
