@@ -15,13 +15,10 @@ $(function() {
 		default:
 			view_type = "ImageView";
 	}
-	//console.log("The view type from config is " + view_type + " <<<<");
-	
 
 	var json_path = Drupal.settings.islandora_mirador_bookreader.json_file_directory+'sc_manifest_list.json';
 
 	$.getJSON(json_path, function(data) {
-
 
 	// The manifest_url is dynamically generated based on the pid
 	var pid = Drupal.settings.islandora_mirador_bookreader.pid;
@@ -33,9 +30,9 @@ $(function() {
 
 	// Get the current pid from the url
 	var pathname = window.location.pathname;
-		pathname = pathname.split("/");
+	pathname = pathname.split("/");
 	var current_pid = pathname[3];
-		current_pid = current_pid.replace('paleography%3A', 'paleography:');
+	current_pid = current_pid.replace('paleography%3A', 'paleography:');
 	var current_manifest_url = base_url + "/islandora/object/" + current_pid + "/datastream/SC/view"; 
 
 	// Create a new data array
@@ -43,17 +40,17 @@ $(function() {
 
 	// Grab the current object and put it into the beginning of the array
 	// This is to make the Mirador viewer load faster
-
 	$.each(data, function(idx, obj) {
-		if(obj.manifestUri == current_manifest_url) {
-		console.log(current_pid); 
+		if (obj.manifestUri == current_manifest_url) {
+			console.log(current_pid); 
 			new_data.unshift(obj); 
-		} else { new_data.push(obj); }
+		} else {
+			new_data.push(obj); 
+		}
 	});
 
 	// This is the main Mirador constructor. The settings corresponds to settings.js in the source code, see there for more help
-	
-		Mirador({
+	Mirador({
 			"id": "mirador-bookreader",
 			"data": new_data,
 			//"data":[{ "manifestUri": manifest_url, "location": "University of Toronto"}],
@@ -90,7 +87,6 @@ $(function() {
 			]
 		});
 	}); //getJSON
-
 });
 
 })(jQuery);

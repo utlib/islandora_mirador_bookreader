@@ -3,7 +3,7 @@
 /**
  * @file
  *
- * Theme for the Open Library Internet Archive BookReader.
+ * Theme for Mirador BookReader.
  */
 
 ?>
