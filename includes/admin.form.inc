@@ -2,33 +2,26 @@
 
 /**
  * @file
- * Handles the display/submission of the admin settings form for this module.
+ * Houses the administration for the islandora_mirador_bookreader module.
  */
 
 /**
- * Defines the admin settings form.
+ * Creates the administration form for the islandora_mirador_bookreader module.
  *
  * @param array $form
- *   The Drupal form definition.
+ *   An array representing a Drupal form.
  * @param array $form_state
- *   The Drupal form state.
+ *   An array containing the form state.
  *
  * @return array
- *   The Drupal form definition.
+ *   A renderable array representing the islandora_mirador_bookreader administration form.
  */
 function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
   $get_default_value = function($name, $default) use($form_state) {
     return isset($form_state['values'][$name]) ? $form_state['values'][$name] : variable_get($name, $default);
   };
-  $solr_enabled = module_exists('islandora_solr');
+  //$solr_enabled = module_exists('islandora_solr');
   $form = array(
-/*	'islandora_mirador_bookreader_iiif_server' => array(
-		'#type' => 'textfield',
-		'#title' => t('IIIF server URL'),
-		'#description' => t('URL of the server that serves IIIF compliant images'),
-		'#default_value' => $get_default_value('islandora_mirador_bookreader_iiif_server')
-	),
-*/
 	'islandora_mirador_bookreader_default_page_view' => array(
 		'#type' => 'select',
 	      '#title' => t('Default page view'),
