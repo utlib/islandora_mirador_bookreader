@@ -1,4 +1,5 @@
-/* Base css that works on vanila islandora installation */
+/* Base css that works on vanila islandora installation */ 
+
 body {
   overflow: auto; }
 
@@ -12,64 +13,51 @@ body {
   width: 100%;
   min-height: 1000px;
   position: relative !important; }
-
-.mirador-reader .content-container {
-  margin-top: 40px; }
-
-.mirador-reader .content-container .panel-thumbnail-view {
-  overflow-x: initial; }
-
-.mirador-reader .window-manifest-title {
-  font-size: 1.5em;
-  padding: 5px 0 0 10px;
-  margin: 0;
-  margin-left: 35px;
-  overflow: hidden;
-  height: 40px;
-  color: #fff; }
-
-.mirador-reader .manifest-info {
-  overflow: hidden;
-  background-color: #b43d2e; }
-
-.mirador-reader .manifest-info .dropdown.slot-controls {
-  width: 190px;
-  height: 240px; }
-
-.mirador-reader .select-metadata {
-  width: 300px; }
-
-.mirador-reader .select-metadata h3 {
-  font-size: 1em;
-  padding: 5px 0; }
-
-.mirador-reader .select-metadata h4 {
-  font-size: 0.9em;
-  padding: 0 5px 0 0;
-  line-height: 1;
-  margin: 5px 0 7px 0;
-  font-family: 'Open Sans', 'Helvetica Neue', sans-serif !important; }
-
-.mirador-reader .select-metadata h4.repository-label {
-  position: static;
-  line-height: 1.5;
-  margin: 0;
-  font-family: 'EB Garamond', 'Times New Roman', serif !important; }
-
-.mirador-reader .layer-slot {
-  width: 100% !important; }
-
-.mirador-reader .repo-image {
-  display: none; }
+  .mirador-reader .content-container {
+    margin-top: 40px; }
+    .mirador-reader .content-container .panel-thumbnail-view {
+      overflow-x: initial; }
+  .mirador-reader .window-manifest-title {
+    font-size: 1.5em;
+    padding: 5px 0 0 10px;
+    margin: 0;
+    margin-left: 35px;
+    overflow: hidden;
+    height: 40px;
+    color: #fff; }
+  .mirador-reader .manifest-info {
+    overflow: hidden;
+    background-color: #b43d2e; }
+    .mirador-reader .manifest-info .dropdown.slot-controls {
+      width: 190px;
+      height: 240px; }
+  .mirador-reader .select-metadata {
+    width: 300px; }
+    .mirador-reader .select-metadata h3 {
+      font-size: 1em;
+      padding: 5px 0; }
+    .mirador-reader .select-metadata h4 {
+      font-size: 0.9em;
+      padding: 0 5px 0 0;
+      line-height: 1;
+      margin: 5px 0 7px 0;
+      font-family: 'Open Sans', 'Helvetica Neue', sans-serif !important; }
+    .mirador-reader .select-metadata h4.repository-label {
+      position: static;
+      line-height: 1.5;
+      margin: 0;
+      font-family: 'EB Garamond', 'Times New Roman', serif !important; }
+  .mirador-reader .layer-slot {
+    width: 100% !important; }
+  .mirador-reader .repo-image {
+    display: none; }
 
 .mirador-main-menu-bar {
   height: 38px; }
-
-.mirador-main-menu-bar ul.mirador-main-menu {
-  padding: 0; }
-
-.mirador-main-menu-bar ul.mirador-main-menu li {
-  margin-left: 10px; }
+  .mirador-main-menu-bar ul.mirador-main-menu {
+    padding: 0; }
+    .mirador-main-menu-bar ul.mirador-main-menu li {
+      margin-left: 10px; }
 
 .mirador-pan-zoom-toggle {
   bottom: 110px; }
@@ -88,20 +76,17 @@ body {
 /* Undo mirador-combined.css */
 #main-menu .container {
   overflow: initial; }
-
-#main-menu .container #main-menu-navbar .dropdown li {
-  margin: initial;
-  background-color: initial;
-  padding: initial;
-  width: initial;
-  text-align: initial; }
-
-#main-menu .container #main-menu-navbar .dropdown li:hover {
-  border-left: initial; }
-
-#main-menu .container #main-menu-navbar .dropdown a {
-  opacity: 1;
-  pointer-events: initial; }
+  #main-menu .container #main-menu-navbar .dropdown li {
+    margin: initial;
+    background-color: initial;
+    padding: initial;
+    width: initial;
+    text-align: initial; }
+  #main-menu .container #main-menu-navbar .dropdown li:hover {
+    border-left: initial; }
+  #main-menu .container #main-menu-navbar .dropdown a {
+    opacity: 1;
+    pointer-events: initial; }
 
 .islandora-mirador-bookreader #load-controls {
   float: none;
@@ -140,5 +125,3 @@ body {
   padding: 0 10px 0 0;
   line-height: 1;
   font-family: 'Open Sans', 'Helvetica Neue', sans-serif !important; }
-
-/* Add your custom css here */
