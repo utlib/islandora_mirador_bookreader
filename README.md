@@ -7,13 +7,13 @@ Using the [Mirador](https://github.com/IIIF/mirador) open-source image viewer, t
 ## Requirements
 
 * [Libraries](https://www.drupal.org/project/libraries)
-* [Mirador](https://github.com/IIIF/mirador)
+* [Mirador](http://iiif.github.io/mirador/)
 
 ## Installation
 
-	1. As usual, download or clone this repo into Islandora's module directory and enable.
-	2. Download the Mirador compiled javascript library, unzip, and place into "sites/all/libraries" as with other libraries.
-	3. Choose "Mirador Bookreader" in the list of viewers on the Book Solution Pack configuration page. 
+1. As usual, download or clone this repo into Islandora's module directory and enable.
+2. Download the Mirador compiled javascript library, unzip, and place into "sites/all/libraries" as with other libraries.
+3. Choose "Mirador Bookreader" in the list of viewers on the Book Solution Pack configuration page. 
 
 ## Configuration
 
