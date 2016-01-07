@@ -84,15 +84,6 @@ function islandora_mirador_bookreader_islandora_viewer_info() {
   );
 }
 
-/**
- * Callback function for the viewer.
- *
- * @param array $params
- *   The params for the theme function 'islandora_mirador_bookreader'.
- *
- * @return string
- *   HTML repersentation of the Internet Archive BookReader.
- */
 function islandora_mirador_bookreader_viewer_callback(array $params) {
   return theme('islandora_mirador_bookreader', $params);
 }
