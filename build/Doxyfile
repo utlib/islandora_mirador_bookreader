@@ -25,7 +25,7 @@ DOXYFILE_ENCODING      = UTF-8
 # The PROJECT_NAME tag is a single word (or a sequence of words surrounded
 # by quotes) that should identify the project.
 
-PROJECT_NAME           = Islandora Internet Archive Bookreader
+PROJECT_NAME           = Islandora Mirador Viewer 
 
 # Put the git hash here using sed before generating the documentation.
 PROJECT_NUMBER         =
