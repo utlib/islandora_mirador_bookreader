@@ -41,12 +41,15 @@ $(function() {
 		Mirador({
 			"id": "mirador-bookreader",
 			"data": new_data,
-			//"data":[{ "manifestUri": manifest_url, "location": "University of Toronto"}],
+			
+			/* Optional parameters
+			"data":[{ "manifestUri": manifest_url, "location": "University of Toronto"}],
 			'mainMenuSettings': {
 				'show':false,
 				'buttons': { 'bookmark' : false }
 			},
 			"showAddFromURLBox":false,	
+			*/
 
 			'buildPath' : '/sites/all/libraries/mirador/',
 
@@ -65,12 +68,14 @@ $(function() {
 			"windowObjects": [
 				{
 					"loadedManifest":manifest_url,
-					"viewType":view_type,
+					"viewType":view_type
+					/*
 					"annotationLayer":false,
 					"displayLayout": true,
 					"bottomPanel" : true,
 					"sidePanel" : false,
 					"overlayMetadata": false
+					*/
 				}
 			]
 		});
@@ -78,10 +83,3 @@ $(function() {
 });
 
 })(jQuery);
-
-/* A custom javascript function for UTL only. It scrolls the page down when clicking the "i" icon instead of showing the overlay metadata */
-function scrollToMetadata() {
-        jQuery('html, body').animate({
-                scrollTop: jQuery('.islandora-metadata').offset().top
-        }, 1000);
-}
