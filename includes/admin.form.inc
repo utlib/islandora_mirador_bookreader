@@ -38,7 +38,7 @@ function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
 		'#type' => 'textfield',
 		'#title' => t('Manifest list URL'),
 		'#description' => t('Enter the link for an JSON array of links to manifests. This array will be used as the "data" attribute when launching Mirador on a Book Object page.'),
-		'#default_value' => ''
+		'#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_list_url', ''),
 	),
 
 	'islandora_mirador_bookreader_parent_pid' => array(

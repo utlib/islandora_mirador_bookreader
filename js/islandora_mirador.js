@@ -1,6 +1,5 @@
 (function($) {
 $(function() {
-	// This view type corresponds with the Drupal module setting
 	var view_type = Drupal.settings.islandora_mirador_bookreader.view_type;	
 	switch(parseInt(view_type)) {
 		case 1:
@@ -17,35 +16,29 @@ $(function() {
 	}
 
 	var manifest_list_url = Drupal.settings.islandora_mirador_bookreader.manifest_list_url;
-	if (manifest_list_url) {
-		console.log(manifest_list_url);
+	if (!manifest_list_url) {
+		manifest_list_url = Drupal.settings.islandora_mirador_bookreader.json_file_directory+'sc_manifest_list.json';
 	}
-	var json_path = Drupal.settings.islandora_mirador_bookreader.json_file_directory+'sc_manifest_list.json';
 
-	$.getJSON(json_path, function(data) {
+	$.getJSON(manifest_list_url, function(data) {
 
-	// The manifest_url is dynamically generated based on the pid
-	var pid = Drupal.settings.islandora_mirador_bookreader.pid;
+		// Retrieves the current object's PID and uses it to construct the URL for Mirador's windowObjects' loadedManifest attribute 
+		var pid = Drupal.settings.islandora_mirador_bookreader.pid;
+		var base_url = Drupal.settings.islandora_mirador_bookreader.base_url;
+		var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/SC/view";
+			
+		// Grab the current object and put it into the beginning of the array
+		// This is to make the Mirador viewer load faster
+		var new_data = []; 
+		$.each(data, function(idx, obj) {
+			if (obj.manifestUri == manifest_url) {
+				new_data.unshift(obj); 
+			} else {
+				new_data.push(obj); 
+			}
+		});
 
-	var base_url = Drupal.settings.islandora_mirador_bookreader.base_url;
-
-	//put a base url
-	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/SC/view";	
-
-	// Create a new data array
-	var new_data = []; 
-	// Grab the current object and put it into the beginning of the array
-	// This is to make the Mirador viewer load faster
-	$.each(data, function(idx, obj) {
-		if (obj.manifestUri == manifest_url) {
-			new_data.unshift(obj); 
-		} else {
-			new_data.push(obj); 
-		}
-	});
-
-	// This is the main Mirador constructor. The settings corresponds to settings.js in the source code, see there for more help
-	Mirador({
+		Mirador({
 			"id": "mirador-bookreader",
 			"data": new_data,
 			//"data":[{ "manifestUri": manifest_url, "location": "University of Toronto"}],
@@ -86,6 +79,7 @@ $(function() {
 
 })(jQuery);
 
+/* A custom javascript function for UTL only. It scrolls the page down when clicking the "i" icon instead of showing the overlay metadata */
 function scrollToMetadata() {
         jQuery('html, body').animate({
                 scrollTop: jQuery('.islandora-metadata').offset().top
