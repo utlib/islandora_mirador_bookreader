@@ -1,4 +1,4 @@
-# Islandora Mirador Bookreader (*** url will be added here ***)
+# Islandora Mirador Bookreader
 
 ## Introduction
 
