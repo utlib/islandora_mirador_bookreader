@@ -16,6 +16,10 @@ $(function() {
 			view_type = "ImageView";
 	}
 
+	var manifest_list_url = Drupal.settings.islandora_mirador_bookreader.manifest_list_url;
+	if (manifest_list_url) {
+		console.log(manifest_list_url);
+	}
 	var json_path = Drupal.settings.islandora_mirador_bookreader.json_file_directory+'sc_manifest_list.json';
 
 	$.getJSON(json_path, function(data) {
