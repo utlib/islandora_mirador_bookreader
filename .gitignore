@@ -1,11 +1,4 @@
 ## ignore rules
-*~
-*.lock
-*.DS_Store
-*.swp
-*.out
-js/islandora_loader.js
-*.komodoproject
 css/.sass-cache/
 css/.sass-cache/*
 css/mirador_custom.css.map
