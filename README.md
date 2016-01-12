@@ -14,6 +14,7 @@ Using the [Mirador](https://github.com/IIIF/mirador) open-source image viewer, t
 1. As usual, download or clone this repo into Drupal's module directory and enable.
 2. Download the Mirador compiled javascript library, unzip, and place into "sites/all/libraries" as with other libraries.
 3. Choose "Mirador Bookreader" in the list of viewers on the Book Solution Pack configuration page. 
+4. [Optional] On the list of viewers page in step #3, click on "configure" for Mirador and Enter the manifest list URL in the Mirador Bookreader configuration page in Drupal.
 
 ## Configure
 
