@@ -41,6 +41,7 @@ $(function() {
 			"windowObjects": [
 				{
                                 	"loadedManifest":manifest_url,
+					"viewType":view_type
                                 }
 			]		
 		});
@@ -77,6 +78,7 @@ $(function() {
 				"windowObjects": [
 					{
 						"loadedManifest":manifest_url,
+						"viewType":view_type
 					}
 				]
 			});
