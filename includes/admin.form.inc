@@ -34,6 +34,13 @@ function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
 	      )
         ),
 
+	'islandora_mirador_bookreader_manifest_datastream_id' => array(
+                '#type' => 'textfield',
+                '#title' => t('Manifest datastream ID'),
+                '#description' => t('ID of the Islandora Object datastream ID used by Mirador to retrieve the IIIF Shared Canvas Manifest'),
+                '#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_datastream_id', ''),
+        ),
+
 	'islandora_mirador_bookreader_manifest_list_url' => array(
 		'#type' => 'textfield',
 		'#title' => t('Manifest list URL'),
