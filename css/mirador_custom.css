@@ -1,11 +1,15 @@
-/* Correctional CSS that is necessary for bookreader to display in vanilla Islandora */
+/* Base css that works on vanila islandora installation */
 body {
   overflow: auto; }
+
+.layout-slot {
+  width: 100%; }
 
 .mirador-reader {
   width: 100%;
   min-height: 1000px;
   position: relative !important; }
+  .mirador-reader .content-container .panel-thumbnail-view {
+    overflow-x: initial; }
 
-.mirador-reader .content-container .panel-thumbnail-view {
-  overflow-x: initial; }
+/* Add your custom css here */
