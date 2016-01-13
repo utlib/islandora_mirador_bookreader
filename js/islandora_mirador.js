@@ -23,7 +23,7 @@ $(function() {
 	var manifest_datastream_id = Drupal.settings.islandora_mirador_bookreader.manifest_datastream_id;
 	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/" + manifest_datastream_id + "/view";
 	if (!manifest_datastream_id) {
-		/* no datastream specified, which means no image can be loaded. Use a dummy as a placeholder until the datastream is available */
+		/* no SC manifest datastream specified in Drupal config, which means no image can be loaded. Use a dummy as a placeholder until the datastream is available */
 		manifest_url = "http://manifests.ydc2.yale.edu/manifest/Admont23";
 	}
 
@@ -53,12 +53,12 @@ $(function() {
 	} else {
 
 		$.getJSON(manifest_list_url, function(data) {
-			/* Verify that the JSON retrieved is indeed array */
+			/* Verify that the JSON retrieved is indeed array. More error checking should be added later */
 			if (Object.prototype.toString.call(data) != '[object Array]') {
 				throw 'TypeError: Manifest list retrieved via Drupal manifest list URL is not an JSON array';
 			}
 	
-			/* Move the current page's manifest to the top of the manifest list, so the bookreader loads it first while loading the others in the background afterwards */	
+			/* Move the current page's manifest to the top of the manifest list, so the bookreader loads it first then loads the others in the background */	
 			var new_data = []; 
 			$.each(data, function(idx, obj) {
 				if (obj.manifestUri == manifest_url) {
