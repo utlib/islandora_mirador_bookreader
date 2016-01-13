@@ -24,7 +24,7 @@ $(function() {
 	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/" + manifest_datastream_id + "/view";
 	if (!manifest_datastream_id) {
 		/* no datastream specified, which means no image can be loaded. Use a dummy as a placeholder until the datastream is available */
-		manifest_url = "http://dms-data.stanford.edu/data/manifests/Walters/qm670kv1873/manifest.json";
+		manifest_url = "http://manifests.ydc2.yale.edu/manifest/Admont23";
 	}
 
 	/* Retrieve the JSON array of links to manifests, if any, and supply it to Mirador's constructor */
@@ -35,10 +35,10 @@ $(function() {
 			"id": "mirador-bookreader",
 			"data":[{ "manifestUri": manifest_url, "location": "University of Toronto"}],
 			'buildPath' : '/sites/all/libraries/mirador/',
-			'i18nPath' : '/sites/all/libraries/mirador/locales/',
-			'imagesPath' : '/sites/all/libraries/mirador/images/',
-			'logosPath' : '/sites/all/libraries/mirador/images/logos/',
-			'logosLocation' : '/sites/all/libraries/mirador/images/logos/',
+			'i18nPath' : 'locales/',
+			'imagesPath' : 'images/',
+			'logosPath' : 'logos/',
+			'logosLocation' : 'logos/',
 			'repoImages' : {
 				'other': 'iiif_logo.png'
 			},
@@ -72,10 +72,10 @@ $(function() {
 				"id": "mirador-bookreader",
 				"data": new_data,		
 				'buildPath' : '/sites/all/libraries/mirador/',
-				'i18nPath' : '/sites/all/libraries/mirador/locales/',
-				'imagesPath' : '/sites/all/libraries/mirador/images/',
-				'logosPath' : '/sites/all/libraries/mirador/images/logos/',
-				'logosLocation' : '/sites/all/libraries/mirador/images/logos/',
+				'i18nPath' : 'locales/',
+				'imagesPath' : 'images/',
+				'logosPath' : 'logos/',
+				'logosLocation' : 'logos/',
 				'repoImages' : {
 					'other': 'iiif_logo.png'
 				},
