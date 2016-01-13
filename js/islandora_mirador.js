@@ -20,8 +20,12 @@ $(function() {
 	/* Setup the base URL for windowObjects or data attribute to render */
 	var pid = Drupal.settings.islandora_mirador_bookreader.pid;
 	var base_url = Drupal.settings.islandora_mirador_bookreader.base_url;
-	var manifest_datastream_id = Drupal.settings.islandora_mirador_bookreader.manifest_datastream_id;
-	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/" + manifest_datastream_id + "/view";	
+	var maniifest_datastream_id = Drupal.settings.islandora_mirador_bookreader.manifest_datastream_id;
+	var manifest_url = base_url + "/islandora/object/" + pid + "/datastream/" + manifest_datastream_id + "/view";
+	if (!manifest_datastream_id) {
+		/* no datastream specified, which means no image can be loaded. Use a dummy as a placeholder until the datastream is available */
+		manifest_url = "http://dms-data.stanford.edu/data/manifests/Walters/qm670kv1873/manifest.json";
+	}
 
 	/* Retrieve the JSON array of links to manifests, if any, and supply it to Mirador's constructor */
 	var manifest_list_url = Drupal.settings.islandora_mirador_bookreader.manifest_list_url;
