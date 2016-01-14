@@ -6,8 +6,10 @@ This module makes use of the [Mirador](https://github.com/IIIF/mirador) open sou
 
 ## Prerequisites
 
-* [Libraries](https://www.drupal.org/project/libraries)
-* [Mirador](http://iiif.github.io/mirador/)
+* Drupal module [libraries](https://www.drupal.org/project/libraries)
+* Compiled Mirador javascript library
+** [Stable 2.0 version](https://github.com/IIIF/mirador/releases)
+** [Sourcecode on Github](http://iiif.github.io/mirador/) The master branch contains many new features that you can try
 
 ### IIIF server and manifest generation
 
