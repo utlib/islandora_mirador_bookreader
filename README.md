@@ -15,12 +15,15 @@ This module makes use of the [Mirador](https://github.com/IIIF/mirador) open sou
 * An Shared Canvas Manifest datastream generated for each Book object, specified in the IIIF Presentation API 2.0 [here](http://iiif.io/api/presentation/2.0/#primary-resource-types)
   * The [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest) can generate them.
 
-## Install
+## Installation
 
-1. As usual, download or clone this repo into Drupal's module directory and enable.
-2. Download the Mirador compiled javascript library, unzip, and place into "sites/all/libraries" as with other libraries.
-3. Choose "Mirador Bookreader" in the list of viewers on the Book Solution Pack configuration page - http://path.to.your.site/admin/islandora/solution_pack_config/book
-4. [Optional] On the Book Solution Pack configuration page in step #3, you can click on "configure" to reach the Mirador configuration page at http://path.to.your.siteadmin/islandora/islandora_viewers/mirador_bookreader. Here you can select the "Default page view" (i.e. (Image, Book, Thumbnails) and also enter the PID of the parent collection containing the book objects that you want to display in your site's Mirador BookReader - i.e. "islandora:root". This will generate the manifest list URL in the Mirador Bookreader configuration page in Drupal.
+1. Put the compiled Mirador library under `sites/all/libraries`
+2. Download and enable the reader module.
+
+At this point, the reader will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
+However, the reader can automatically load the current object's manifest, give that you have set up an IIIF image server and generated the necessary manifests. If you have done those steps, continue with the steps below:
+1. Open Mirador Bookreader configuration `admin/islandora/islandora_viewers/mirador_bookreader`
+2. Under **Manfiest datastream ID** enter the correct value. If you are using Islandora SC Manifest module, the default ID is **SC**.
 
 ## Configure
 
