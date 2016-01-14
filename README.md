@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Using the [Mirador](https://github.com/IIIF/mirador) open-source image viewer, this module is designed to implement IIIF compliant on drupal islandora environment.
+This module makes use of the [Mirador](https://github.com/IIIF/mirador) open source viewer for Islandora Book Objects (replacing the Islandora Internet Archives Bookreader). This module requires that you have a IIIF image server installed.
 
 ## Prerequisites
 
@@ -13,8 +13,8 @@ Using the [Mirador](https://github.com/IIIF/mirador) open-source image viewer, t
 
 1. As usual, download or clone this repo into Drupal's module directory and enable.
 2. Download the Mirador compiled javascript library, unzip, and place into "sites/all/libraries" as with other libraries.
-3. Choose "Mirador Bookreader" in the list of viewers on the Book Solution Pack configuration page. 
-4. [Optional] On the list of viewers page in step #3, click on "configure" for Mirador and Enter the manifest list URL in the Mirador Bookreader configuration page in Drupal.
+3. Choose "Mirador Bookreader" in the list of viewers on the Book Solution Pack configuration page - http://path.to.your.site/admin/islandora/solution_pack_config/book
+4. [Optional] On the Book Solution Pack configuration page in step #3, you can click on "configure" to reach the Mirador configuration page at http://path.to.your.siteadmin/islandora/islandora_viewers/mirador_bookreader. Here you can select the "Default page view" (i.e. (Image, Book, Thumbnails) and also enter the PID of the parent collection containing the book objects that you want to display in your site's Mirador BookReader - i.e. "islandora:root". This will generate the manifest list URL in the Mirador Bookreader configuration page in Drupal.
 
 ## Configure
 
