@@ -17,17 +17,25 @@ This module makes use of the [Mirador](https://github.com/IIIF/mirador) open sou
 
 ## Installation
 
-1. Put the compiled Mirador library under `sites/all/libraries`
-2. Download and enable the reader module.
+1. Put the compiled Mirador library under `sites/all/libraries`. Verify the file permission on the directory.
+2. Download and enable the viewer module.
+3. In `admin/islandora/solution_pack_config/book` choose **Mirador BookReader** under Book Viewers.
 
-At this point, the reader will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
-However, the reader can automatically load the current object's manifest, give that you have set up an IIIF image server and generated the necessary manifests. If you have done those steps, continue with the steps below:
+At this point, the viewer will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
+However, the viewer can automatically load the current object's manifest, give that you have set up an IIIF image server and generated the necessary manifests. If you have done those steps, continue with the steps below:
+
 1. Open Mirador Bookreader configuration `admin/islandora/islandora_viewers/mirador_bookreader`
 2. Under **Manfiest datastream ID** enter the correct value. If you are using Islandora SC Manifest module, the default ID is **SC**.
 
 ## Configure
 
-Most configurations are pure Mirador javascript parameters when initializing, not Drupal. These parameters are documentated on Mirador's Github wiki. The parameters are set in this module's "js/islandora_mirador.js" file.
+The Drupal configuration is at `admin/islandora/islandora_viewers/mirador_bookreader`. It can also be access via Book Solution Pack's configuration.
+
+### [Optional] Manifest list configuration
+
+Optionally you can enable the viewer to load a list of manifests within the viewer. One use case would be to include other manifests from the same repository, so the user can quickly navigate without using Drupal's navigation. 
+
+The URL to the JSON array can be provided in Mirador Bookreader's configuration page.
 
 ## Known issues
 
