@@ -9,6 +9,15 @@ This module makes use of the [Mirador](https://github.com/IIIF/mirador) open sou
 * [Libraries](https://www.drupal.org/project/libraries)
 * [Mirador](http://iiif.github.io/mirador/)
 
+### IIIF server and manifest generation
+
+This bookreader relies on two other components:
+
+* An image server that complies with the IIIF Image API 2.0 specified [here](http://iiif.io/api/image/2.0/).
+* An Shared Canvas Manifest datastream generated for each Book object, specified in the IIIF Presentation API 2.0 [here](http://iiif.io/api/presentation/2.0/)
+
+[Loris](https://github.com/loris-imageserver/loris) can be used for the image server.
+
 ## Install
 
 1. As usual, download or clone this repo into Drupal's module directory and enable.
@@ -20,7 +29,9 @@ This module makes use of the [Mirador](https://github.com/IIIF/mirador) open sou
 
 Most configurations are pure Mirador javascript parameters when initializing, not Drupal. These parameters are documentated on Mirador's Github wiki. The parameters are set in this module's "js/islandora_mirador.js" file.
 
-The only Drupal configuration so far is the dropdown selection of "viewType". This can be found through the usual Islandora module configuration pages.
+## Known issues
+
+* The thumbnails do not appear unless the view changes. This is due to mirador.js not putting the link to the image inside the "src" attribute in its HTML image tag. Modification to mirador.js is needed to fix this. 
 
 ## Maintainers
 
