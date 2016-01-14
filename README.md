@@ -8,17 +8,12 @@ This module makes use of the [Mirador](https://github.com/IIIF/mirador) open sou
 
 * Drupal module [libraries](https://www.drupal.org/project/libraries)
 * Compiled Mirador javascript library
-[Stable 2.0 version](https://github.com/IIIF/mirador/releases)
-[Sourcecode on Github](http://iiif.github.io/mirador/) The master branch contains many new features that you can try
-
-### IIIF server and manifest generation
-
-This bookreader relies on two other components:
-
+  * [Stable 2.0 version](https://github.com/IIIF/mirador/releases)
+  * [Sourcecode on Github](http://iiif.github.io/mirador/) The master branch contains many new features that you can try
 * An image server that complies with the IIIF Image API 2.0 specified [here](http://iiif.io/api/image/2.0/).
+  * [Loris](https://github.com/loris-imageserver/loris) can be used for the image server.
 * An Shared Canvas Manifest datastream generated for each Book object, specified in the IIIF Presentation API 2.0 [here](http://iiif.io/api/presentation/2.0/#primary-resource-types)
-
-[Loris](https://github.com/loris-imageserver/loris) can be used for the image server.
+  * The [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest) can generate them.
 
 ## Install
 
