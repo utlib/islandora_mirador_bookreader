@@ -26,13 +26,14 @@ function get_book_objects_sc_manifest($list_of_pid) {
 
       $child_obj_islandora = $fo->get_object($pid);
 
-      if (isset($child_obj_islandora['SC'])) {
-        $manifest_url = $base_url."/islandora/object/".$pid."/datastream/SC/";
+      var manifest_datastream_id = Drupal.settings.islandora_mirador_bookreader.manifest_datastream_id;
+      if (isset($child_obj_islandora[manifest_datastream_id])) {
+	
+        $manifest_url = $base_url."/islandora/object/".$pid."/datastream/" . manifest_datastream_id . "/";
         $manifest_url_list[] = array("manifestUri" => $manifest_url, "location" => "University of Toronto");
 
       }
     }
-
   }
 
   return $manifest_url_list;
