@@ -1,6 +1,6 @@
 # Islandora Mirador Bookreader
 
-## Intro
+## Introduction
 
 This module implements [Mirador](https://github.com/IIIF/mirador) open source [IIIF](http://iiif.io/) image viewer for [Islandora Book Solution Pack](https://github.com/Islandora/islandora_solution_pack_book). 
 
@@ -18,13 +18,18 @@ This module development was supported by the The Andrew W. Mellon Foundation for
   * You can generate them using the [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest)
 
 ## Install
-
 1. Download compiled Mirador javascript library into Drupal's libraries directory, usually in`sites/all/libraries`. Verify the file permission is web servable. 
-2. Clone the module  and enable the viewer module.
-3. In `admin/islandora/solution_pack_config/book` choose **Mirador BookReader** under Book Viewers.
+2. Clone and enable this module.
+3. Go to admin/islandora/solution_pack_config/book` and choose **Mirador BookReader** under Book Viewers.
 
 At this point, the viewer will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
-However, the viewer can automatically load the current object's manifest, give that you have set up an IIIF image server and generated the necessary manifests. If you have done those steps, continue with the steps below:
+
+### Generate SharedCanvas Manifest datastream
+In order for the viewer to automatically display the current page's book object, you must generate a SCManifest JSON datastream for the object. 
+
+Please read the instruction within the [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest) module or the [SharedCanvas Manifest](http://iiif.io/api/presentation/2.0/#manifest) API on how to generate such a datastream.
+
+After you have generate the datastream, configure the viewer with the following:
 
 1. Open Mirador Bookreader configuration `admin/islandora/islandora_viewers/mirador_bookreader`
 2. Under **Manfiest datastream ID** enter the correct value. If you are using Islandora SC Manifest module, the default ID is **SC**.
