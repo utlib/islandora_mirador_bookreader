@@ -1,24 +1,26 @@
 # Islandora Mirador Bookreader
 
-## Introduction
+## Intro
 
-This module makes use of the [Mirador](https://github.com/IIIF/mirador) open source viewer for Islandora Book Objects (replacing the Islandora Internet Archives Bookreader). This module requires that you have a IIIF image server installed. This module development was supported by the The Andrew W. Mellon Foundation for the [French Renaissance Paleography website] (https://paleography.library.utoronto.ca/).
+This module implements [Mirador](https://github.com/IIIF/mirador) open source [IIIF](http://iiif.io/) image viewer for [Islandora Book Solution Pack](https://github.com/Islandora/islandora_solution_pack_book). 
+
+This module development was supported by the The Andrew W. Mellon Foundation for the [French Renaissance Paleography website] (https://paleography.library.utoronto.ca/).
 
 ## Prerequisites
 
-* Drupal module [libraries](https://www.drupal.org/project/libraries)
+* Drupal module [Libraries](https://www.drupal.org/project/libraries)
 * Compiled Mirador javascript library
   * [Stable 2.0 version](https://github.com/IIIF/mirador/releases)
-  * [Sourcecode on Github](http://iiif.github.io/mirador/) The master branch contains many new features that you can try
-* An image server that complies with the IIIF Image API 2.0 specified [here](http://iiif.io/api/image/2.0/).
-  * [Loris](https://github.com/loris-imageserver/loris) can be used for the image server.
-* An Shared Canvas Manifest datastream generated for each Book object, specified in the IIIF Presentation API 2.0 [here](http://iiif.io/api/presentation/2.0/#primary-resource-types)
-  * The [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest) can generate them.
+  * [Sourcecode on Github](http://iiif.github.io/mirador/) You need to compile it; the 2.0.0 tag is identical as the release. The Master branch contains many experimental features that are not stable, but fun for testing.
+* An IIIF [Image API](http://iiif.io/api/image/2.0/) server.
+  * [Loris](https://github.com/loris-imageserver/loris) works well.
+* JSON [SharedCanvas Manifest](http://iiif.io/api/presentation/2.0/#manifest) Fedora datastreams for Book Solution Pack objects
+  * You can generate them using the [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest)
 
-## Installation
+## Install
 
-1. Put the compiled Mirador library under `sites/all/libraries`. Verify the file permission on the directory.
-2. Download and enable the viewer module.
+1. Download compiled Mirador javascript library into Drupal's libraries directory, usually in`sites/all/libraries`. Verify the file permission is web servable. 
+2. Clone the module  and enable the viewer module.
 3. In `admin/islandora/solution_pack_config/book` choose **Mirador BookReader** under Book Viewers.
 
 At this point, the viewer will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
