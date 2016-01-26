@@ -47,7 +47,9 @@ The module can generate an JSON list of links to SCManifest datastreams at `admi
 ## Current maintainers
 
 * [University of Toronto Libraries:](http://its.library.utoronto.ca/)
-	* [Sunny Lee](https://github.com/sunnywd)
 	* [Kelli Babcock](http://its.library.utoronto.ca/staff/kelli-babcock)
+	* [Sunny Lee](https://github.com/sunnywd)	* 
 	* [Sean Xiao Zhao](https://github.com/sean-xiao-zhao7)
+	* [Bilal Khalid](https://github.com/bilalkhalid)
+	* [Chulhee Yoon](https://github.com/cyoon84)
 
