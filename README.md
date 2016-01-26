@@ -24,8 +24,8 @@ This module development was supported by the The Andrew W. Mellon Foundation for
 
 At this point, the viewer will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
 
-### Generate SharedCanvas Manifest datastream
-In order for the viewer to automatically display the current page's book object, you must generate a SCManifest JSON datastream for the object. 
+### Generate SharedCanvas Manifest datastreams
+In order for the viewer to automatically display the current page's book object, you must generate a SCManifest JSON datastream for the object and tell the viewer to use this datastream when loading the page.
 
 Please read the instruction within the [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest) module or the [SharedCanvas Manifest](http://iiif.io/api/presentation/2.0/#manifest) API on how to generate such a datastream.
 
@@ -34,21 +34,20 @@ After you have generate the datastream, configure the viewer with the following:
 1. Open Mirador Bookreader configuration `admin/islandora/islandora_viewers/mirador_bookreader`
 2. Under **Manfiest datastream ID** enter the correct value. If you are using Islandora SC Manifest module, the default ID is **SC**.
 
-## Configure
-
-The Drupal configuration is at `admin/islandora/islandora_viewers/mirador_bookreader`. It can also be access via Book Solution Pack's configuration.
-
 ### [Optional] Manifest list configuration
 
-Optionally you can enable the viewer to load a list of manifests within the viewer. One use case would be to include other manifests from the same repository, so the user can quickly navigate without using Drupal's navigation. 
+This module adds the functionality of loading all the children book objects under a collection within the "Add New Object" in Mirador to allow for faster switching between objects.
 
-The URL to the JSON array can be provided in Mirador Bookreader's configuration page.
+The module can generate an JSON list of links to SCManifest datastreams at `admin/islandora/islandora_viewers/mirador_bookreader/json_generate`
 
 ## Known issues
 
 * The thumbnails do not appear unless the view changes. This is due to mirador.js not putting the link to the image inside the "src" attribute in its HTML image tag. Modification to mirador.js is needed to fix this. 
 
-## Maintainers
+## Current maintainers
 
-* [University of Toronto Libraries](https://github.com/utlib)
+* [University of Toronto Libraries:](http://its.library.utoronto.ca/)
+	* [Sunny Lee](https://github.com/sunnywd)
+	* [Kelli Babcock](http://its.library.utoronto.ca/staff/kelli-babcock)
+	* [Sean Xiao Zhao](https://github.com/sean-xiao-zhao7)
 
