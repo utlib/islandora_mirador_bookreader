@@ -36,9 +36,13 @@ After you have generate the datastream, configure the viewer with the following:
 
 ### [Optional] Manifest list configuration
 
-This module adds the functionality of loading all the children book objects under a collection within the "Add New Object" in Mirador to allow for faster switching between objects.
+This module adds the functionality of loading all the children book objects under a collection within the "Add New Object" in Mirador to allow for faster switching between objects, instead of navigating using the Drupal pages. This functionality is not required for this module to display the objects. 
 
-The module can generate an JSON list of links to SCManifest datastreams at `admin/islandora/islandora_viewers/mirador_bookreader/json_generate`
+For this to work, first the PID of the parent collection must be specified in `admin/islandora/islandora_viewers/mirador_bookreader`
+
+The module can then generate an JSON list of links to SCManifest datastreams at `admin/islandora/islandora_viewers/mirador_bookreader/json_generate`
+
+The result is a JSON array of links to the SharedCanvas Manifest datastreams of Book Solution Pack object. The Mirador viewer will use AJAX to load **all** of the links upon loading of any Book object page. 
 
 ## Known issues
 
@@ -48,7 +52,7 @@ The module can generate an JSON list of links to SCManifest datastreams at `admi
 
 * [University of Toronto Libraries:](http://its.library.utoronto.ca/)
 	* [Kelli Babcock](http://its.library.utoronto.ca/staff/kelli-babcock)
-	* [Sunny Lee](https://github.com/sunnywd)	* 
+	* [Sunny Lee](https://github.com/sunnywd)
 	* [Sean Xiao Zhao](https://github.com/sean-xiao-zhao7)
 	* [Bilal Khalid](https://github.com/bilalkhalid)
 	* [Chulhee Yoon](https://github.com/cyoon84)
