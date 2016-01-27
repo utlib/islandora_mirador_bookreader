@@ -12,7 +12,7 @@ This module development was supported by the The Andrew W. Mellon Foundation for
 * Compiled Mirador javascript library
   * [Stable 2.0 version](https://github.com/IIIF/mirador/releases)
   * [Sourcecode on Github](http://iiif.github.io/mirador/) You need to compile it; the 2.0.0 tag is identical as the release. The Master branch contains many experimental features that are not stable, but fun for testing.
-* An IIIF [Image API](http://iiif.io/api/image/2.0/) server.
+* IIIF [Image API](http://iiif.io/api/image/2.0/) server
   * [Loris](https://github.com/loris-imageserver/loris) works well.
 * JSON [SharedCanvas Manifest](http://iiif.io/api/presentation/2.0/#manifest) Fedora datastreams for Book Solution Pack objects
   * You can generate them using the [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest)
@@ -20,7 +20,7 @@ This module development was supported by the The Andrew W. Mellon Foundation for
 ## Install
 1. Download compiled Mirador javascript library into Drupal's libraries directory, usually in`sites/all/libraries`. Verify the file permission is web servable. 
 2. Clone and enable this module.
-3. Go to admin/islandora/solution_pack_config/book` and choose **Mirador BookReader** under Book Viewers.
+3. Go to admin/islandora/solution_pack_config/book and choose **Mirador BookReader** under Book Viewers.
 
 At this point, the viewer will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
 
