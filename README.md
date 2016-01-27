@@ -25,18 +25,18 @@ This module development was supported by the The Andrew W. Mellon Foundation for
 At this point, the viewer will show an example manuscript with an option to manually add SharedCanvas Manifests from URL.
 
 ### Generate SharedCanvas Manifest datastreams
-In order for the viewer to automatically display the current page's book object, you must generate a SCManifest JSON datastream for the object and tell the viewer to use this datastream when loading the page.
+In order for the viewer to automatically display the current book object's pages, you must generate a SCManifest JSON datastream for the book object and tell the viewer to use this datastream when loading the page.
 
 Please read the instruction within the [Islandora SC Manifest module](https://github.com/utlib/islandora_sc_manifest) module or the [SharedCanvas Manifest](http://iiif.io/api/presentation/2.0/#manifest) API on how to generate such a datastream.
 
-After you have generate the datastream, configure the viewer with the following:
+After you have generated the datastream, configure the viewer with the following:
 
 1. Open Mirador Bookreader configuration `admin/islandora/islandora_viewers/mirador_bookreader`
-2. Under **Manfiest datastream ID** enter the correct value. If you are using Islandora SC Manifest module, the default ID is **SC**.
+2. Under **Manfiest datastream ID** enter the correct value. If you are using the UTL Islandora SC Manifest module, the default ID is **SC**.
 
 ### [Optional] Manifest list configuration
 
-This module adds the functionality of loading all the children book objects under a collection within the "Add New Object" in Mirador to allow for faster switching between objects, instead of navigating using the Drupal pages. This functionality is not required for this module to display the objects. 
+This module adds the functionality of loading all children book objects under a collection within the "Add New Object" feature in Mirador. This allows a user to compare book objects in one Mirador window. This functionality is not required for this module to display the objects. 
 
 For this to work, first the PID of the parent collection must be specified in `admin/islandora/islandora_viewers/mirador_bookreader`
 
@@ -46,7 +46,7 @@ The result is a JSON array of links to the SharedCanvas Manifest datastreams of 
 
 ## Known issues
 
-* The thumbnails do not appear unless the view changes. This is due to mirador.js not putting the link to the image inside the "src" attribute in its HTML image tag. Modification to mirador.js is needed to fix this. 
+* The thumbnails do not appear unless the view changes. This is due to mirador.js not putting the link to the image inside the "src" attribute in its HTML image tag. Modification to mirador.js is needed to fix this.
 
 ## Current maintainers
 
