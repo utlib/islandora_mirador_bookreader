@@ -40,7 +40,7 @@ This module adds the functionality of loading all the children book objects unde
 
 For this to work, first the PID of the parent collection must be specified in `admin/islandora/islandora_viewers/mirador_bookreader`
 
-The module can then generate an JSON list of links to SCManifest datastreams at `admin/islandora/islandora_viewers/mirador_bookreader/json_generate`
+The module can then generate a JSON list of links to SCManifest datastreams at `admin/islandora/islandora_viewers/mirador_bookreader/json_generate`
 
 The result is a JSON array of links to the SharedCanvas Manifest datastreams of Book Solution Pack object. The Mirador viewer will use AJAX to load **all** of the links upon loading of any Book object page. 
 
