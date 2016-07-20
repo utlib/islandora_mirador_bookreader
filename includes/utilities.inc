@@ -30,7 +30,7 @@ function get_book_objects_sc_manifest($list_of_pid) {
       if (isset($child_obj_islandora[manifest_datastream_id])) {
 	
         $manifest_url = $base_url."/islandora/object/".$pid."/datastream/" . manifest_datastream_id . "/";
-        $manifest_url_list[] = array("manifestUri" => $manifest_url, "location" => "University of Toronto");
+        $manifest_url_list[] = array("manifestUri" => $manifest_url);
 
       }
     }
