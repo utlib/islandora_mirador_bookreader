@@ -33,7 +33,7 @@ $(function() {
 
 		Mirador({
 			"id": "mirador-bookreader",
-			"data": new_data,
+			"data":[{ "manifestUri": manifest_url, "location": "University of Toronto"}],
 			'buildPath' : '/sites/all/libraries/mirador/',
 			'i18nPath' : 'locales/',
 			'imagesPath' : 'images/',
