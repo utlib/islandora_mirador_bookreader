@@ -75,7 +75,7 @@ function islandora_mirador_bookreader_generate_json_form($form, &$form_state) {
 	} else {
 		$file_url = file_create_url($scmanifest_json_file_uri);
 		$form['title'] = array(
-      		'#markup' => t("JSON file was created at ".date ("F d Y H:i:s.", filemtime($scmanifest_json_file_uri))."<br> <a href='@url' target='_blank'>View JSON file</a><br>", array('@url' => url($file_url)))
+      		'#markup' => t("JSON file was created at ".date ("F d Y H:i:s.", filemtime($scmanifest_json_file_uri))."<br> <a href='@url' target='_blank'>View JSON file</a> <br> If this doesn't work, try again after clearing the cache.<br/>", array('@url' => url($file_url)))
     	);
     	$form['islandora_mirador_generate_json'] = array (
 	        '#type' => 'submit',
