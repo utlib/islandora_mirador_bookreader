@@ -37,7 +37,7 @@ $(function() {
 			'buildPath' : '/sites/all/libraries/mirador/',
 			'i18nPath' : 'locales/',
 			'imagesPath' : 'images/',
-			'logosPath' : 'logos/',
+			'logosPath' : 'images/logos/',
 			'logosLocation' : 'logos/',
 			'repoImages' : {
 				'other': 'iiif_logo.png'
@@ -74,7 +74,7 @@ $(function() {
 				'buildPath' : '/sites/all/libraries/mirador/',
 				'i18nPath' : 'locales/',
 				'imagesPath' : 'images/',
-				'logosPath' : 'logos/',
+				'logosPath' : 'images/logos/',
 				'logosLocation' : 'logos/',
 				'repoImages' : {
 					'other': 'iiif_logo.png'
@@ -87,7 +87,7 @@ $(function() {
 				]
 			});
 		});
-	};
+	}
 });
 
 })(jQuery);
