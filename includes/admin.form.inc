@@ -49,7 +49,7 @@ function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
 	),
 
 	'islandora_mirador_bookreader_parent_pid' => array(
-		'#type' => 'textfield',
+		'#type' => 'textarea',
 		'#title' => t('Enter the PID of the parent collection containing the book objects that will display in your site\'s Mirador BookReader, i.e. islandora:root.'),
 		'#default_value' => $get_default_value('islandora_mirador_bookreader_parent_pid', ''),
 		'#description' => t('Please separate each PID with a comma.')
