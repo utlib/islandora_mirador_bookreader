@@ -91,3 +91,12 @@ $(function() {
 });
 
 })(jQuery);
+
+
+// Make "i" icon (info button) in Mirador viewer toggle to 
+// metadata details below
+function scrollToMetadata() {
+        jQuery('html, body').animate({
+                scrollTop: jQuery('.islandora-metadata').offset().top
+        }, 1000);
+}
