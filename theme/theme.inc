@@ -35,6 +35,6 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
   drupal_add_css("$library_path/css/mirador-combined.css");
   drupal_add_css("$module_path/css/mirador_custom.css");
 
-  drupal_add_js("$library_path/mirador.js", array('group' => JS_LIBRARY));
-  drupal_add_js("$module_path/js/islandora_mirador.js", array('group' => JS_LIBRARY));
+  drupal_add_js("$library_path/mirador.js", array('group' => JS_LIBRARY, 'scope' => 'footer'));
+  drupal_add_js("$module_path/js/islandora_mirador.js", array('group' => JS_LIBRARY, 'scope' => 'footer'));
 }
