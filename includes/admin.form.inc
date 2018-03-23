@@ -34,6 +34,13 @@ function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
 	      )
         ),
 
+    'islandora_mirador_bookreader_manifest_url_template' => array(
+        '#type' => 'textfield',
+        '#title' => t('Manifest URL template'),
+        '#description' => t('The general form of the manifest URL. Use [base_url] to represent the base URL of this Drupal instance, [pid] for the object PID and [manifest_datastream_id] for the manifest datastream ID.'),
+        '#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_url_template', '[base_url]/islandora/object/[pid]/datastream/[manifest_datastream_id]/view'),
+    ),
+    
 	'islandora_mirador_bookreader_manifest_datastream_id' => array(
                 '#type' => 'textfield',
                 '#title' => t('Manifest datastream ID'),

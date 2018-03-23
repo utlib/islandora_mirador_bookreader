@@ -26,11 +26,12 @@ function islandora_mirador_bookreader_preprocess_islandora_mirador_bookreader(ar
   $view_type = variable_get('islandora_mirador_bookreader_default_page_view');
   $manifest_list_url = variable_get('islandora_mirador_bookreader_manifest_list_url');
   $manifest_datastream_id = variable_get('islandora_mirador_bookreader_manifest_datastream_id');
+  $manifest_url_template = variable_get('islandora_mirador_bookreader_manifest_url_template');
 
   $uri = 'public://';
   $path= file_create_url($uri);
 
-  drupal_add_js(array('islandora_mirador_bookreader' => array('json_file_directory' => $path, 'base_url' => $base_url, 'pid' => $object->id, 'view_type' => $view_type, 'manifest_list_url' => $manifest_list_url, 'manifest_datastream_id' => $manifest_datastream_id)), array('type' => 'setting'));
+  drupal_add_js(array('islandora_mirador_bookreader' => array('json_file_directory' => $path, 'base_url' => $base_url, 'pid' => $object->id, 'view_type' => $view_type, 'manifest_url_template' => $manifest_url_template, 'manifest_list_url' => $manifest_list_url, 'manifest_datastream_id' => $manifest_datastream_id)), array('type' => 'setting'));
 
   drupal_add_css("$library_path/css/mirador-combined.css");
   drupal_add_css("$module_path/css/mirador_custom.css");
