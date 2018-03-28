@@ -79,7 +79,11 @@ function islandora_mirador_bookreader_islandora_viewer_info() {
         'islandora:bookCModel',
         'islandora:newspaperIssueCModel',
         'islandora:manuscriptCModel',
+        'islandora:sp_basic_image',
+        'islandora:sp_large_image_cmodel',
+        'islandora:compoundCModel'
       ),
+      'mimetype' => array('image/jp2')
     ),
   );
 }

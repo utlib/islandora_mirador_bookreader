@@ -17,23 +17,8 @@ $(function() {
 			view_type = "ImageView";
 	}
 
-	/* Setup the base URL for windowObjects or data attribute to render */
-	var pid = Drupal.settings.islandora_mirador_bookreader.pid;
-	var base_url = Drupal.settings.islandora_mirador_bookreader.base_url;
-	var manifest_datastream_id = Drupal.settings.islandora_mirador_bookreader.manifest_datastream_id;
-        var template_variables = {
-            "pid": pid,
-            "base_url": base_url,
-            "manifest_datastream_id": manifest_datastream_id
-        };
-        var template_regex = new RegExp('(\\[' + Object.keys(template_variables).join('\\]|\\[') + '\\])', 'g');
-	var manifest_url = (Drupal.settings.islandora_mirador_bookreader.manifest_url_template || '[base_url]/islandora/object/[pid]/datastream/[manifest_datastream_id]/view').replace(template_regex, function(s) {
-            return template_variables[s.slice(1, -1)];
-        });
-	if (!manifest_datastream_id) {
-		/* no SC manifest datastream specified in Drupal config, which means no image can be loaded. Use a dummy as a placeholder until the datastream is available */
-		manifest_url = "http://manifests.ydc2.yale.edu/manifest/Admont23";
-	}
+	var manifest_url = Drupal.settings.islandora_mirador_bookreader.manifest_url;
+	console.log("Manifest URL: ", manifest_url);
 
 	function getSelectedCanvasID() {
 

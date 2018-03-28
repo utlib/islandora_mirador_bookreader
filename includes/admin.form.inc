@@ -22,46 +22,39 @@ function islandora_mirador_bookreader_admin_settings_form($form, &$form_state) {
   };
   //$solr_enabled = module_exists('islandora_solr');
   $form = array(
-	'islandora_mirador_bookreader_default_page_view' => array(
-		'#type' => 'select',
-	      '#title' => t('Default page view'),
-	      '#description' => t('Mirador viewType. https://github.com/IIIF/mirador/blob/11cc39379e7346b1301c3163a5f22c8fe396900f/js/src/settings.js#L41'),
-	      '#default_value' => $get_default_value('islandora_mirador_bookreader_default_page_view', 1),
-	      '#options' => array(
-		1 => 'Image',
-		2 => 'Book',
-		3 => 'Thumbnails',
-	      )
-        ),
+		'islandora_mirador_bookreader_default_page_view' => array(
+			'#type' => 'select',
+			'#title' => t('Default page view'),
+			'#description' => t('Mirador viewType. https://github.com/IIIF/mirador/blob/11cc39379e7346b1301c3163a5f22c8fe396900f/js/src/settings.js#L41'),
+			'#default_value' => $get_default_value('islandora_mirador_bookreader_default_page_view', 1),
+			'#options' => array(
+				1 => 'Image',
+				2 => 'Book',
+				3 => 'Thumbnails',
+			)
+		),
 
-    'islandora_mirador_bookreader_manifest_url_template' => array(
-        '#type' => 'textfield',
-        '#title' => t('Manifest URL template'),
-        '#description' => t('The general form of the manifest URL. Use [base_url] to represent the base URL of this Drupal instance, [pid] for the object PID and [manifest_datastream_id] for the manifest datastream ID.'),
-        '#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_url_template', '[base_url]/islandora/object/[pid]/datastream/[manifest_datastream_id]/view'),
+    'islandora_mirador_bookreader_iiif_base_url' => array(
+			'#type' => 'textfield',
+			'#title' => t('Manifest URL template'),
+			'#description' => t('If this manifest is in the IIIF server the base url for the IIIF server. (eg): https://iiif.library.utoronto.ca/presentation/v2'),
+			'#default_value' => $get_default_value('islandora_mirador_bookreader_iiif_base_url', 'https://iiif.library.utoronto.ca/presentation/v2'),
     ),
     
-	'islandora_mirador_bookreader_manifest_datastream_id' => array(
-                '#type' => 'textfield',
-                '#title' => t('Manifest datastream ID'),
-                '#description' => t('ID of the Islandora Object datastream ID used by Mirador to retrieve the IIIF Shared Canvas Manifest'),
-                '#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_datastream_id', 'SC'),
-        ),
+		'islandora_mirador_bookreader_manifest_list_url' => array(
+			'#type' => 'textfield',
+			'#title' => t('Manifest list URL'),
+			'#description' => t('Enter the link for an JSON array of links to manifests. This array will be used as the "data" attribute when launching Mirador on a Book Object page.'),
+			'#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_list_url', ''),
+		),
 
-	'islandora_mirador_bookreader_manifest_list_url' => array(
-		'#type' => 'textfield',
-		'#title' => t('Manifest list URL'),
-		'#description' => t('Enter the link for an JSON array of links to manifests. This array will be used as the "data" attribute when launching Mirador on a Book Object page.'),
-		'#default_value' => $get_default_value('islandora_mirador_bookreader_manifest_list_url', ''),
-	),
-
-	'islandora_mirador_bookreader_parent_pid' => array(
-		'#type' => 'textarea',
-		'#title' => t('Enter the PID of the parent collection containing the book objects that will display in your site\'s Mirador BookReader, i.e. islandora:root.'),
-		'#default_value' => $get_default_value('islandora_mirador_bookreader_parent_pid', ''),
-		'#description' => t('Please separate each PID with a comma.')
-	)
-  );
+		'islandora_mirador_bookreader_parent_pid' => array(
+			'#type' => 'textarea',
+			'#title' => t('Enter the PID of the parent collection containing the book objects that will display in your site\'s Mirador BookReader, i.e. islandora:root.'),
+			'#default_value' => $get_default_value('islandora_mirador_bookreader_parent_pid', ''),
+			'#description' => t('Please separate each PID with a comma.')
+		)
+	);
   return system_settings_form($form);
 }
 
