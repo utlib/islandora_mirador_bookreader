@@ -1,5 +1,8 @@
 # Islandora Mirador Bookreader
 
+## Archived
+This repository is archived as of September 2020. 
+
 ## Introduction
 
 This module implements [Mirador](https://github.com/IIIF/mirador) open source [IIIF](http://iiif.io/) image viewer for [Islandora Book Solution Pack](https://github.com/Islandora/islandora_solution_pack_book). 
