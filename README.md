@@ -1,7 +1,7 @@
 # Islandora Mirador Bookreader
 
 ## Archived
-This repository is archived as of September 2020. 
+This repository is archived as of September 2020. The module was a custom module developed in 2015 before Islandora came with IIIF (https://www.slideshare.net/KellliBee/20150803-51261740). The module will not be updated as U of T Libraries is migrating off of Islandora. The module does not work with the IIIF infrastructure that is now built-in to current Islandora or ISLE versions. 
 
 ## Introduction
 
